@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://joaovenari.github.io/noctivago-docs/sitemap.xml

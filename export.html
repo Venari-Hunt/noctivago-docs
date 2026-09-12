@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Export a Mix to Audio or Video — Noctívago Docs</title>
+<meta name="description" content="How Noctívago's Export tab bakes a whole ambient mix down to one audio file, or a video with a waveform/spectrum visualization, for uploading elsewhere.">
+<link rel="canonical" href="https://joaovenari.github.io/noctivago-docs/export.html">
+<link rel="icon" href="assets/img/favicon.png">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+<header class="site-header">
+  <div class="wrap">
+    <img class="logo" src="assets/img/favicon.png" alt="">
+    <span class="brand">Noctívago</span>
+    <nav class="site-nav">
+      <a href="index.html">Home</a>
+      <a href="getting-started.html">Getting started</a>
+      <a href="mixer.html">Mixer</a>
+      <a href="remix.html">Remix (per-sound editor)</a>
+      <a href="sound-groups.html">Sound Groups</a>
+      <a href="export.html" class="active">Export</a>
+      <a href="sleep-timer.html">Sleep timer</a>
+      <a href="faq.html">FAQ</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <div class="wrap">
+    <h1>Export</h1>
+    <p class="subtitle">Bake a whole preset down to one finished audio or video file.</p>
+
+    <img class="screenshot" src="assets/img/screenshot-export.png" alt="The Export tab: preset picker, length, format, and video options">
+
+    <p>The Export tab simulates how a preset would actually play over a chosen length — including Random Interval and Scheduled sounds firing at realistic moments, Sound Group and whole-mix processing, and Fluctuation drift — then renders the whole thing down to one file. It's the same engine that plays your mix live, run once and captured to a file instead of listened to in real time.</p>
+
+    <h2>Basic settings</h2>
+    <ul>
+      <li><strong>Preset</strong> and <strong>Length</strong> — which mix, and how long the exported file should be.</li>
+      <li><strong>Format</strong> — including lossless WAV and space-saving compressed formats (Opus needs a specific sample rate internally, which Noctívago handles for you).</li>
+      <li><strong>Fade in / out</strong> — in seconds, at the start and end of the export.</li>
+    </ul>
+
+    <h2>Video output, for platforms that need one</h2>
+    <p>Choose Audio only, Video only, or Both. When a video is produced, pick its background:</p>
+    <table>
+      <tr><th>Background</th><th>What it is</th></tr>
+      <tr><td>Flat black screen</td><td>Fastest option, just your audio muxed under a plain 1080p frame — good for a straightforward YouTube upload.</td></tr>
+      <tr><td>Audio-reactive visualization</td><td>Waveform, spectrum, or vectorscope, in a color/palette you choose, reacting to the actual audio.</td></tr>
+      <tr><td>Loop a video file</td><td>Your own background video clip, looped or trimmed to match the export length.</td></tr>
+      <tr><td>Loop an image</td><td>A still image, optionally with a slow spin or a "DVD bounce" motion.</td></tr>
+    </table>
+
+    <h2>Speed options</h2>
+    <p><strong>Faster export</strong> renders independent parts of the export several at once instead of one after another — noticeably quicker on a long preset with a lot of Random Interval/Scheduled activity, at the cost of using more CPU and memory while it runs.</p>
+
+    <h2>Extra output</h2>
+    <p>An optional <strong>info.txt</strong> file written alongside the export lists the preset name, length, format, and every included sound's name and tags — handy raw material for writing a YouTube or social media description by hand or with an AI's help (it even ends with a ready-to-paste prompt for that).</p>
+
+    <h2>Progress and completion</h2>
+    <p>A real progress bar and a scrolling log show exactly what's rendering; the log also saves to a text file next to the export so it's not lost if you're not watching. A chime plays on completion (a different tone for success vs. failure) so you don't have to babysit a long export.</p>
+  </div>
+</main>
+
+<footer><div class="wrap">Noctívago is an independent, early-stage project. This documentation covers the app as it exists today and will grow alongside it.</div></footer>
+</body>
+</html>

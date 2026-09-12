@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The Mixer — Noctívago Docs</title>
+<meta name="description" content="How Noctívago's Mixer tab works: adding sounds, tags, sorting and grouping, presets, playback modes, and the sleep timer.">
+<link rel="canonical" href="https://joaovenari.github.io/noctivago-docs/mixer.html">
+<link rel="icon" href="assets/img/favicon.png">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+<header class="site-header">
+  <div class="wrap">
+    <img class="logo" src="assets/img/favicon.png" alt="">
+    <span class="brand">Noctívago</span>
+    <nav class="site-nav">
+      <a href="index.html">Home</a>
+      <a href="getting-started.html">Getting started</a>
+      <a href="mixer.html" class="active">Mixer</a>
+      <a href="remix.html">Remix (per-sound editor)</a>
+      <a href="sound-groups.html">Sound Groups</a>
+      <a href="export.html">Export</a>
+      <a href="sleep-timer.html">Sleep timer</a>
+      <a href="faq.html">FAQ</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <div class="wrap">
+    <h1>The Mixer</h1>
+    <p class="subtitle">Your sound library, your current mix, and the master controls — the tab you'll spend most of your time on.</p>
+
+    <img class="screenshot" src="assets/img/screenshot-mixer.png" alt="The Mixer tab: a sound library list with tags, and a Current Mix section with per-sound volume sliders">
+
+    <h2>The toolbar</h2>
+    <ul>
+      <li><strong>Preset indicator</strong> — shows which preset (if any) the current mix is built from.</li>
+      <li><strong>Play all</strong> — starts or stops every sound currently in the mix at once.</li>
+      <li><strong>Volume</strong> — the master volume for the whole mix. It's bipolar: the center is a sound's own recorded level, drag left to quiet it down, right to boost it.</li>
+      <li><strong>Sleep timer</strong> (the moon icon) — see the <a href="sleep-timer.html">Sleep timer</a> page.</li>
+      <li><strong>Presets</strong> — save the current mix, or load/delete a saved one.</li>
+      <li><strong>Settings</strong> (gear icon) — auto-update, eager-baking, and other app-wide options.</li>
+      <li><strong>+</strong> — every way to add a new sound (see <a href="getting-started.html">Getting started</a>).</li>
+    </ul>
+
+    <h2>Your sound library</h2>
+    <p>Every sound you've ever added lives here, whether or not it's currently in your mix. Each row shows the sound's name, length, and file size, its tags, an <strong>In Mix</strong> toggle, a volume slider, mute, solo, and remove.</p>
+
+    <h3>Search, sort, and group</h3>
+    <p>A search bar filters the library by name. A sort dropdown covers name, date added, date created, or a custom drag-to-reorder order. A grouping dropdown can organize the list alphabetically, by date, or by tag.</p>
+
+    <h3>Tags</h3>
+    <p>Add or remove tags freely on any sound; a tag filter bar along the top lets you narrow the list to just sounds with a tag you click (the active filter lights up so it's clear what you're looking at). Tag autocomplete matches your existing tags as you type.</p>
+
+    <h3>Currently playing, automatically</h3>
+    <p>Whatever's actually making sound right now automatically floats to the top of the list, loudest first — no toggle to remember, it just reflects reality. A "Current Mix" group sits just below that: sounds that are in your mix but not currently playing (for example, while the mix is paused).</p>
+
+    <h2 id="playback-modes">Three ways a sound can play</h2>
+    <p>Set in the <a href="remix.html">Remix</a> tab, per sound:</p>
+    <table>
+      <tr><th>Mode</th><th>What it does</th><th>Good for</th></tr>
+      <tr><td><strong>Loop</strong></td><td>Plays continuously, looping seamlessly at a trim point you choose (or the whole file).</td><td>Rain, wind, drones — anything meant to run the whole time.</td></tr>
+      <tr><td><strong>Random Interval</strong></td><td>Replays a short clip at a randomized gap, with a randomized pitch each time.</td><td>A creak, a bird call, a distant thunderclap — something that shouldn't loop back-to-back.</td></tr>
+      <tr><td><strong>Scheduled</strong></td><td>Fires at real clock times you set — a specific time of day, or a repeating interval.</td><td>An hourly chime, a church bell at noon and midnight.</td></tr>
+    </table>
+
+    <h2>Sound Groups</h2>
+    <p>Right-click any sound in the Mixer to add it to a Sound Group, or create a new one — a small badge on the row shows which group a sound belongs to. See the dedicated <a href="sound-groups.html">Sound Groups</a> page for what a group actually does.</p>
+
+    <h2>Presets</h2>
+    <p>A preset remembers which sounds are included and each one's volume. Load one to instantly restore that whole mix; editing a loaded preset (adding/removing sounds, changing a volume) saves back into it automatically after a short pause, so there's no separate "save" step to remember mid-session — a "Save … now" button is still there if you want to force it immediately.</p>
+
+    <h2>If the app restarts</h2>
+    <p>Noctívago remembers your master volume, which preset was active, and (if it was playing when you closed it) resumes the same mix automatically the next time it opens.</p>
+  </div>
+</main>
+
+<footer><div class="wrap">Noctívago is an independent, early-stage project. This documentation covers the app as it exists today and will grow alongside it.</div></footer>
+</body>
+</html>

@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sound Groups — Noctívago Docs</title>
+<meta name="description" content="Route a subset of your Noctívago mix through a shared EQ/reverb bus with Sound Groups — for effects like 'outside vs. inside' on your ambience.">
+<link rel="canonical" href="https://joaovenari.github.io/noctivago-docs/sound-groups.html">
+<link rel="icon" href="assets/img/favicon.png">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+<header class="site-header">
+  <div class="wrap">
+    <img class="logo" src="assets/img/favicon.png" alt="">
+    <span class="brand">Noctívago</span>
+    <nav class="site-nav">
+      <a href="index.html">Home</a>
+      <a href="getting-started.html">Getting started</a>
+      <a href="mixer.html">Mixer</a>
+      <a href="remix.html">Remix (per-sound editor)</a>
+      <a href="sound-groups.html" class="active">Sound Groups</a>
+      <a href="export.html">Export</a>
+      <a href="sleep-timer.html">Sleep timer</a>
+      <a href="faq.html">FAQ</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <div class="wrap">
+    <h1>Sound Groups</h1>
+    <p class="subtitle">A shared, non-destructive processing bus for a subset of your mix.</p>
+
+    <p>A Sound Group is a named subset of one preset's sounds, routed through one shared chain — <code>highpass → lowpass → EQ → gain → echo → reverb → volume fluctuation → limiter</code> — instead of each sound going straight to the master volume on its own.</p>
+
+    <h2>Why group sounds</h2>
+    <p>The obvious use is a rough "distance" or "location" effect: put your outdoor sounds (wind, birds, traffic) in one group, tame it with a bit of lowpass and some reverb, and it starts to read as "outside a window" rather than sitting right on top of your indoor sounds. It's also just a convenience — one EQ move that shapes several sounds together, instead of repeating the same edit on each one individually in Remix.</p>
+
+    <div class="callout">
+      <strong>Getting a believable "behind a wall/door" effect</strong> is less about turning a group down and more about turning its <em>lowpass down</em> (more muffled) <em>while turning its reverb mix up</em> at the same time — muffled-but-roomy reads as "elsewhere," muffled-alone mostly just reads as "quieter." Both controls already live on every group; using them together is the trick.
+    </div>
+
+    <h2>Creating and managing a group</h2>
+    <p>Right-click any sound in the Mixer to add it to a new or existing group — a small badge on the sound's row shows its group at a glance, and clicking the badge lets you change or leave it. The full group editor (membership checklist, name, delete, and every filter control) lives in the Remix tab's <strong>Group</strong> mode, alongside the equivalent <strong>Preset</strong> mode for whole-mix processing (the same filters and EQ, applied to everything in the preset rather than one group).</p>
+
+    <h2>What a group's filters can do</h2>
+    <p>The same tools as a single sound's filters in <a href="remix.html">Remix</a>: highpass, lowpass, gain, the full 7-band parametric EQ, echo, real reverb, and slow volume Fluctuation (a whole group's level can wander over time too, like weather rolling through). One-click effect presets (Muffled, Distant, Underwater, etc.) work here too.</p>
+
+    <h2>Soloing and monitoring</h2>
+    <p>A "Solo group" button in Remix's Group mode mutes everything else in the mix so you can hear just that group while you tune it. A live loudness view and spectrum feed reflect whatever's actually playing through the group, in real time.</p>
+
+    <h2>Exports include groups too</h2>
+    <p>A Sound Group's processing is baked into an exported mix the same way it sounds live — see <a href="export.html">Export</a>.</p>
+  </div>
+</main>
+
+<footer><div class="wrap">Noctívago is an independent, early-stage project. This documentation covers the app as it exists today and will grow alongside it.</div></footer>
+</body>
+</html>

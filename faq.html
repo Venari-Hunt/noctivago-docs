@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>FAQ — Noctívago Docs</title>
+<meta name="description" content="Common questions about Noctívago: the Windows SmartScreen warning, pricing, supported audio formats, privacy, and whether it's open source.">
+<link rel="canonical" href="https://joaovenari.github.io/noctivago-docs/faq.html">
+<link rel="icon" href="assets/img/favicon.png">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+<header class="site-header">
+  <div class="wrap">
+    <img class="logo" src="assets/img/favicon.png" alt="">
+    <span class="brand">Noctívago</span>
+    <nav class="site-nav">
+      <a href="index.html">Home</a>
+      <a href="getting-started.html">Getting started</a>
+      <a href="mixer.html">Mixer</a>
+      <a href="remix.html">Remix (per-sound editor)</a>
+      <a href="sound-groups.html">Sound Groups</a>
+      <a href="export.html">Export</a>
+      <a href="sleep-timer.html">Sleep timer</a>
+      <a href="faq.html" class="active">FAQ</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <div class="wrap">
+    <h1>Frequently asked questions</h1>
+
+    <h2 id="smartscreen">Why does Windows show a warning when I install it?</h2>
+    <p>You'll see "Windows protected your PC" (SmartScreen) the first time you run the installer. This happens because the installer isn't code-signed — a signing certificate costs real money on an ongoing basis, which isn't worth it yet for an early test build. It's not a sign of malware; it's Windows being cautious about any new, unsigned, low-download-count file, regardless of what's actually in it.</p>
+    <p>To proceed: click <strong>More info</strong>, then <strong>Run anyway</strong>. If you'd rather verify the file yourself first, here's a public <a href="https://www.virustotal.com/gui/file/90d313087bb0e979065e837ea9e374faaf9fd36210e98c62547b6fbeda1c4e76">VirusTotal scan</a> of the exact installer, checked against roughly 70 antivirus engines.</p>
+
+    <h2>Is it free?</h2>
+    <p>Yes — Noctívago is pay-what-you-want on itch.io, including $0. It's an early/prototype build; the goal right now is finding out whether it's genuinely useful to people, not charging for it.</p>
+
+    <h2>What platforms does it run on?</h2>
+    <p>Windows only, for now.</p>
+
+    <h2>What audio formats can I import?</h2>
+    <p>mp3, wav, ogg, flac, m4a, and opus.</p>
+
+    <h2>Is Noctívago open source?</h2>
+    <p>Not yet — the source is currently private while the project is still an early test. Open-sourcing it under a copyleft license is the plan for later.</p>
+
+    <h2>Was this built with AI assistance?</h2>
+    <p>Yes, substantially — most of the code was written with an AI coding assistant. This is disclosed directly on the itch.io page as well.</p>
+
+    <h2>Does it collect any data about me?</h2>
+    <p>Noctívago has no analytics or telemetry. The only things it contacts the internet for are checking GitHub for a newer version (only in an installed build, and only ever after asking before actually downloading or installing anything), and, if you use the "Add from link" feature, whatever URL you paste in yourself.</p>
+
+    <h2>Where do I report a bug or leave feedback?</h2>
+    <p>The comments on the <a href="https://venar1.itch.io/noctivago">itch.io page</a> — bug reports, "I wish it did X," and general impressions are all genuinely welcome.</p>
+  </div>
+</main>
+
+<footer><div class="wrap">Noctívago is an independent, early-stage project. This documentation covers the app as it exists today and will grow alongside it.</div></footer>
+</body>
+</html>

@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Remix: Trim, Filters, EQ, Reverb, Noise Reduction — Noctívago Docs</title>
+<meta name="description" content="Noctívago's Remix tab: trim a seamless loop, shape a sound with EQ/reverb/echo/noise gate/noise reduction, add a Doppler pass-by effect, change speed and pitch, and randomize playback.">
+<link rel="canonical" href="https://joaovenari.github.io/noctivago-docs/remix.html">
+<link rel="icon" href="assets/img/favicon.png">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+<header class="site-header">
+  <div class="wrap">
+    <img class="logo" src="assets/img/favicon.png" alt="">
+    <span class="brand">Noctívago</span>
+    <nav class="site-nav">
+      <a href="index.html">Home</a>
+      <a href="getting-started.html">Getting started</a>
+      <a href="mixer.html">Mixer</a>
+      <a href="remix.html" class="active">Remix (per-sound editor)</a>
+      <a href="sound-groups.html">Sound Groups</a>
+      <a href="export.html">Export</a>
+      <a href="sleep-timer.html">Sleep timer</a>
+      <a href="faq.html">FAQ</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <div class="wrap">
+    <h1>Remix — shaping a sound</h1>
+    <p class="subtitle">Trim, filter, EQ, and control exactly how one sound plays, with instant live preview.</p>
+
+    <img class="screenshot" src="assets/img/screenshot-remix.png" alt="The Remix tab: a waveform with trim handles, and filter/EQ controls below it">
+
+    <p>Open the <strong>Remix</strong> tab and pick a sound from the search box at the top. Everything below applies to that one sound; changes preview live as you drag, and nothing is written to your original file — Remix always renders a separate working copy, so your source audio is untouched.</p>
+
+    <h2>Trim and seamless looping</h2>
+    <p>The waveform shows the whole file. Drag the <strong>Start</strong>/<strong>End</strong> handles (or type exact times/a length) to pick the region that loops. A <strong>Suggest a loop point</strong> button analyzes the file's energy and proposes a region that should loop cleanly on its own, which you can still fine-tune.</p>
+    <p>The <strong>Loop crossfade</strong> slider blends the tail of the loop into its head so the seam isn't audible — higher helps busy/textured audio like rain or crowds; 0 disables blending for content that's already a clean loop.</p>
+
+    <h2>Filters</h2>
+    <h3>Highpass / Lowpass / Gain</h3>
+    <p>Cut low rumble (highpass), cut high hiss (lowpass), and adjust overall level (gain) — the three basics, always available.</p>
+
+    <h3>7-band parametric EQ</h3>
+    <p>Seven bands, each independently one of eight filter shapes (peaking, low shelf, high shelf, low pass, high pass, band pass, notch, or off). Drag a node to set frequency/gain, scroll over it to adjust Q, or use the precise numeric fields. A background shows roughly where the sound's own energy sits, and a live spectrum analyzer shows what's actually playing while you preview.</p>
+
+    <h3>Echo &amp; Reverb</h3>
+    <p>Independent, stackable effects — use either, both, or neither. Reverb is real convolution reverb (not a delay dressed up as one), with Size and Mix controls.</p>
+
+    <h3 id="noise-gate">Noise gate</h3>
+    <p>Quiets a sound whenever it drops below a threshold you set — useful for cutting a hissy or rumbly noise floor in the gaps between events on a self-recorded or otherwise noisy clip. Threshold, Reduction, Attack, and Release controls; off by default.</p>
+
+    <h3 id="noise-reduction">Noise reduction</h3>
+    <p>For a steady background noise — tape hiss, mains hum, an air conditioner — that's present even under the sound you actually want (the noise gate only handles the quiet gaps, this handles noise that's there constantly). Mark a stretch of the trimmed loop that's noise-only via "Noise from"/"Noise to" (or the one-click "Noise sample from loop start" button), set a strength, and save — Noctívago measures that stretch and subtracts its noise profile from the whole clip.</p>
+    <div class="callout">There's no live preview for noise reduction (there's no real-time way to do this kind of processing) — flip the preview toggle to "Saved audio" after saving to hear the result.</div>
+
+    <h2>Doppler (pass-by effect)</h2>
+    <p>Simulates a sound passing by: pitch rises approaching a "closest point" you can drag on the waveform, then falls away after it, with a Sharpness control for how gradual vs. sudden the effect feels.</p>
+
+    <h2>Speed, Pitch, Reverse</h2>
+    <p>Speed changes tempo and pitch together (like a tape machine); Pitch shifts pitch alone without changing length or timing; Reverse plays the clip backwards. Speed applies live even to sounds too long to fully bake; Pitch and Reverse only take effect once saved.</p>
+
+    <h2>Fluctuation — slow random drift</h2>
+    <p>Makes a looping sound's volume and/or pitch wander slowly and randomly over time — wind gusting stronger and weaker, rain swelling and fading — instead of sitting at one flat level forever. Set a lowest/highest/typical value, how many seconds between new targets, and how long each glide takes (or tick <strong>Fully random</strong> to roam the whole range with no shape at all).</p>
+
+    <h2>Random Interval &amp; Scheduled details</h2>
+    <p>Both non-loop playback modes (see the <a href="mixer.html#playback-modes">Mixer page</a> for the overview) share fade in/out handles right on the waveform, and their own pitch/volume/speed randomization ranges — "Fully random pitch" and "Fully random gap" checkboxes make that explicit rather than a magic 0 meaning something different.</p>
+
+    <h2>Effect presets</h2>
+    <p>One-click starting points for the filter section: Muffled, Over the Phone, On the Radio, Distant, Underwater, Echo, Reverb. They only touch the highpass/lowpass/gain/echo/reverb fields — your EQ, noise gate, noise reduction, and playback settings are left alone.</p>
+
+    <h2>Undo, redo, and safety</h2>
+    <p>Ctrl+Z / Ctrl+Shift+Z undo and redo your edits; a Cancel button discards everything since you opened the sound; leaving with unsaved changes prompts you first (with a "don't ask again" option). An A/B compare lets you snapshot the current EQ into a slot and flip back and forth while tuning.</p>
+
+    <h2>Live edit vs. Saved audio</h2>
+    <p>Most controls preview live as you drag. A couple (Doppler, Reverse, Noise reduction, and Pitch beyond a rough approximation) can't be previewed in real time — a toggle next to Play switches between the live approximation and the actual saved/baked file, once a save exists that matches your current settings.</p>
+
+    <h2>What comes next</h2>
+    <div class="feature-grid">
+      <div class="card"><h3><a href="sound-groups.html">Sound Groups</a></h3><p>The same filter/EQ tools, applied to several sounds sharing one bus instead of just one sound.</p></div>
+      <div class="card"><h3><a href="export.html">Export</a></h3><p>Bake a whole mix — including every sound's Remix settings — down to one file.</p></div>
+    </div>
+  </div>
+</main>
+
+<footer><div class="wrap">Noctívago is an independent, early-stage project. This documentation covers the app as it exists today and will grow alongside it.</div></footer>
+</body>
+</html>

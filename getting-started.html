@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Getting Started — Noctívago Docs</title>
+<meta name="description" content="How to install Noctívago and build your first ambient sound mix: adding sounds, playing them, saving a preset.">
+<link rel="canonical" href="https://joaovenari.github.io/noctivago-docs/getting-started.html">
+<link rel="icon" href="assets/img/favicon.png">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+<header class="site-header">
+  <div class="wrap">
+    <img class="logo" src="assets/img/favicon.png" alt="">
+    <span class="brand">Noctívago</span>
+    <nav class="site-nav">
+      <a href="index.html">Home</a>
+      <a href="getting-started.html" class="active">Getting started</a>
+      <a href="mixer.html">Mixer</a>
+      <a href="remix.html">Remix (per-sound editor)</a>
+      <a href="sound-groups.html">Sound Groups</a>
+      <a href="export.html">Export</a>
+      <a href="sleep-timer.html">Sleep timer</a>
+      <a href="faq.html">FAQ</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <div class="wrap">
+    <h1>Getting started</h1>
+    <p class="subtitle">Install Noctívago and build your first mix in a couple of minutes.</p>
+
+    <h2>1. Install</h2>
+    <p>Download the installer from <a href="https://venar1.itch.io/noctivago">itch.io</a> and run it. It's a normal Windows installer (NSIS) — you can choose where it installs, and it adds a Start Menu shortcut.</p>
+    <div class="callout warn">
+      <strong>Windows will show a SmartScreen warning</strong> the first time you run the installer, because it isn't code-signed yet. This is normal for a small independent app — see the <a href="faq.html#smartscreen">FAQ</a> for why, and a public virus scan of the file if you want to check it yourself.
+    </div>
+
+    <h2>2. Add your first sounds</h2>
+    <p>On the Mixer tab, click the <strong>+</strong> button in the top toolbar. You can:</p>
+    <ul>
+      <li><strong>Add file…</strong> — pick one audio file (mp3, wav, ogg, flac, m4a, or opus).</li>
+      <li><strong>Add folder as preset…</strong> — every audio file in a folder becomes one saved preset.</li>
+      <li><strong>Add folder as tag…</strong> — every file in a folder gets tagged with the folder's name.</li>
+      <li><strong>Watch a folder…</strong> — register a folder so anything dropped into it later is imported automatically.</li>
+      <li><strong>Record audio…</strong> — record straight from your microphone.</li>
+      <li><strong>Add from link…</strong> — paste a direct audio URL, or a YouTube/video-site link, and it downloads and imports it.</li>
+    </ul>
+
+    <h2>3. Build a mix</h2>
+    <p>Every sound in your library shows up as a row in the Mixer. Click <strong>Add</strong> (or the row's "In Mix" toggle) on each sound you want playing together, adjust each one's volume with its own slider, then hit the big <strong>Play all</strong> button in the toolbar to start (or stop) everything at once. The master Volume slider next to it controls the whole mix's overall level.</p>
+
+    <h2>4. Save it as a preset</h2>
+    <p>Once you like a mix, open <strong>Presets</strong> in the toolbar and save it under a name. Loading a preset later restores exactly which sounds were in it and at what volume — and once a preset is loaded, further tweaks (adding/removing a sound, dragging a volume) save back into it automatically, no extra step needed.</p>
+
+    <h2>5. Shape a sound (optional, but this is where Noctívago goes deep)</h2>
+    <p>Open the <strong>Remix</strong> tab and pick a sound to trim its loop point, add filters/EQ/reverb, or change how it plays (continuous loop vs. a randomized one-shot vs. a clock schedule). See the <a href="remix.html">Remix docs</a> for the full picture — nothing here is required to just get a mix playing, it's there for whenever you want more control over how a sound actually sounds.</p>
+
+    <h2>What's next</h2>
+    <div class="feature-grid">
+      <div class="card"><h3><a href="mixer.html">The Mixer, in depth</a></h3><p>Tags, sorting, search, groups, the "Current Mix" section, and more.</p></div>
+      <div class="card"><h3><a href="remix.html">Remix, in depth</a></h3><p>Everything you can do to shape one sound.</p></div>
+      <div class="card"><h3><a href="export.html">Export a finished mix</a></h3><p>Bake a whole preset down to a real audio or video file.</p></div>
+    </div>
+  </div>
+</main>
+
+<footer><div class="wrap">Noctívago is an independent, early-stage project. This documentation covers the app as it exists today and will grow alongside it.</div></footer>
+</body>
+</html>
