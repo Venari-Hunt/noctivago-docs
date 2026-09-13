@@ -38,7 +38,7 @@
     <p>The obvious use is a rough "distance" or "location" effect: put your outdoor sounds (wind, birds, traffic) in one group, tame it with a bit of lowpass and some reverb, and it starts to read as "outside a window" rather than sitting right on top of your indoor sounds. It's also just a convenience — one EQ move that shapes several sounds together, instead of repeating the same edit on each one individually in Remix.</p>
 
     <div class="callout">
-      <strong>Getting a believable "behind a wall/door" effect</strong> is less about turning a group down and more about turning its <em>lowpass down</em> (more muffled) <em>while turning its reverb mix up</em> at the same time — muffled-but-roomy reads as "elsewhere," muffled-alone mostly just reads as "quieter." Both controls already live on every group; using them together is the trick.
+      <strong>Getting a believable "behind a wall/door" effect</strong> is less about turning a group down and more about turning its <em>lowpass down</em> (more muffled) <em>while turning its reverb mix up</em> at the same time — muffled-but-roomy reads as "elsewhere," muffled-alone mostly just reads as "quieter." Both controls already live on every group; using them together is the trick — or just use the <strong>Occlusion</strong> slider below, which does exactly that with one control.
     </div>
 
     <h2>Creating and managing a group</h2>
@@ -46,6 +46,12 @@
 
     <h2>What a group's filters can do</h2>
     <p>The same tools as a single sound's filters in <a href="remix.html">Remix</a>: highpass, lowpass, gain, the full 7-band parametric EQ, echo, real reverb, and slow volume Fluctuation (a whole group's level can wander over time too, like weather rolling through). One-click effect presets (Muffled, Distant, Underwater, etc.) work here too.</p>
+
+    <h3 id="occlusion">Occlusion</h3>
+    <p>One slider for "this group sounds like it's behind a wall or door" — pulls the group's lowpass down and pushes its reverb up together, rather than you balancing the two by ear. It stacks with whatever Lowpass/Reverb you've already set manually — Occlusion only ever adds muffling on top, it never undoes a manual setting that's already more extreme than what the slider alone would produce.</p>
+
+    <h2>Grouping the sound list by Sound Group</h2>
+    <p>The Mixer's "Group by" dropdown has a Sound Group option — it buckets your library by which group each sound belongs to, with an "Ungrouped" section for anything left out. Each group also gets its own distinct, consistent badge color (generated from the group, not random each time), so it's easier to tell groups apart at a glance without opening anything.</p>
 
     <h2>Soloing and monitoring</h2>
     <p>A "Solo group" button in Remix's Group mode mutes everything else in the mix so you can hear just that group while you tune it. A live loudness view and spectrum feed reflect whatever's actually playing through the group, in real time.</p>

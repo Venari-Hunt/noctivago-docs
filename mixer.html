@@ -49,7 +49,10 @@
     <p>Every sound you've ever added lives here, whether or not it's currently in your mix. Each row shows the sound's name, length, and file size, its tags, an <strong>In Mix</strong> toggle, a volume slider, mute, solo, and remove.</p>
 
     <h3>Search, sort, and group</h3>
-    <p>A search bar filters the library by name. A sort dropdown covers name, date added, date created, or a custom drag-to-reorder order. A grouping dropdown can organize the list alphabetically, by date, or by tag.</p>
+    <p>A search bar filters the library by name. A sort dropdown covers name, date added, date created, or a custom drag-to-reorder order. A grouping dropdown can organize the list alphabetically, by date, by tag, or by <a href="sound-groups.html">Sound Group</a> (with an "Ungrouped" section for anything left out).</p>
+
+    <h3>Editing several sounds at once</h3>
+    <p>A "Select…" button turns on a checkbox next to every sound. With a few checked, a bar appears with the same one-click effect presets Remix has (Muffled, Distant, Reverb, etc.) plus Reset filters — click one and it applies to every selected sound at once instead of opening each in Remix by hand. Each sound's own EQ is left untouched either way; only the same fields a Remix preset would touch (highpass/lowpass/gain/echo/reverb) change.</p>
 
     <h3>Tags</h3>
     <p>Add or remove tags freely on any sound; a tag filter bar along the top lets you narrow the list to just sounds with a tag you click (the active filter lights up so it's clear what you're looking at). Tag autocomplete matches your existing tags as you type.</p>
@@ -67,10 +70,14 @@
     </table>
 
     <h2>Sound Groups</h2>
-    <p>Right-click any sound in the Mixer to add it to a Sound Group, or create a new one — a small badge on the row shows which group a sound belongs to. See the dedicated <a href="sound-groups.html">Sound Groups</a> page for what a group actually does.</p>
+    <p>Right-click any sound in the Mixer to add it to a Sound Group, or create a new one — a small, distinctly-colored badge right next to the sound's name shows which group it belongs to. See the dedicated <a href="sound-groups.html">Sound Groups</a> page for what a group actually does.</p>
 
-    <h2>Presets</h2>
-    <p>A preset remembers which sounds are included and each one's volume. Load one to instantly restore that whole mix; editing a loaded preset (adding/removing sounds, changing a volume) saves back into it automatically after a short pause, so there's no separate "save" step to remember mid-session — a "Save … now" button is still there if you want to force it immediately.</p>
+    <h2 id="presets">Presets</h2>
+    <p>A preset remembers which sounds are included and each one's volume — and Noctívago always has one loaded, so you're never editing a mix that isn't attached to anything. Editing a loaded preset (adding/removing sounds, changing a volume) saves back into it automatically after a short pause, so there's no separate "save" step to remember mid-session. That autosave can be switched off from the Presets window if you'd rather save by hand with the "Save … now" button instead.</p>
+    <p>Creating a new preset gives you two starting points: <strong>New blank preset</strong> (starts completely empty) or <strong>Save current mix as new preset</strong> (a full copy of what's currently loaded — sounds, volumes, whole-mix filters/EQ, and Sound Groups included).</p>
+
+    <h3>A sound can behave differently per preset</h3>
+    <p>Trim, filters, EQ, speed/pitch, play mode, and randomization settings you edit in <a href="remix.html">Remix</a> apply to that sound <em>within whichever preset is currently loaded</em> — not globally. Tweak a shared sound while Preset A is loaded, and only Preset A's copy changes; load Preset B and it still sounds like whatever Preset B last had (or a plain default, if Preset B never touched that sound). Editing a sound that isn't part of the current preset's mix still changes its shared default for anything that hasn't overridden it — Remix tells you when that's what's about to happen.</p>
 
     <h2>If the app restarts</h2>
     <p>Noctívago remembers your master volume, which preset was active, and (if it was playing when you closed it) resumes the same mix automatically the next time it opens.</p>
