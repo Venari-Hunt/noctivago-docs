@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://joaovenari.github.io/noctivago-docs/sitemap.xml
+Sitemap: https://venari-hunt.github.io/noctivago-docs/sitemap.xml

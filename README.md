@@ -4,11 +4,9 @@ Public documentation site for [Noctívago](https://venar1.itch.io/noctivago), a 
 sound mixer. Plain static HTML/CSS, no build step — served via GitHub Pages from this repo's
 `main` branch.
 
-Kept separate from the app's own (private) source repo on purpose: this repo only ever holds
-documentation content, so it can be public (for real search-engine indexing) without exposing
-the app's source.
+Kept in a separate repo from the app's own source ([Venari-Hunt/Noctivago](https://github.com/Venari-Hunt/Noctivago), also public) on purpose: this repo only ever holds documentation content.
 
-Live at: https://joaovenari.github.io/noctivago-docs/
+Live at: https://venari-hunt.github.io/noctivago-docs/
 
 ## Editing
 
