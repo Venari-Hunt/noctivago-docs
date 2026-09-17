@@ -20,6 +20,7 @@
       <a href="mixer.html">Mixer</a>
       <a href="remix.html">Remix (per-sound editor)</a>
       <a href="sound-groups.html">Sound Groups</a>
+      <a href="presets.html">Presets &amp; sharing</a>
       <a href="browse-sounds.html">Browse Sounds</a>
       <a href="export.html" class="active">Export</a>
       <a href="sleep-timer.html">Sleep timer</a>
@@ -58,7 +59,13 @@
     <p><strong>Faster export</strong> renders independent parts of the export several at once instead of one after another — noticeably quicker on a long preset with a lot of Random Interval/Scheduled activity, at the cost of using more CPU and memory while it runs.</p>
 
     <h2>Extra output</h2>
-    <p>An optional <strong>info.txt</strong> file written alongside the export lists the preset name, length, format, and every included sound's name and tags — handy raw material for writing a YouTube or social media description by hand or with an AI's help (it even ends with a ready-to-paste prompt for that).</p>
+    <p>An optional <strong>info.txt</strong> file written alongside the export is raw material for a YouTube or social media description, written by hand or with an AI's help (it ends with a ready-to-paste prompt for that). It contains:</p>
+    <ul>
+      <li><strong>The basics</strong>: preset name, length, format, and every included sound's name and tags.</li>
+      <li><strong>How the scene is set up</strong>: each sound's volume, how it plays (loop, random interval, or scheduled), its group, and any settings that change how it sounds: pitch, pan, drift, effects, and so on. Sound Groups and whole-mix processing are listed too.</li>
+      <li><strong>Credits</strong>: author, license, and link for every sound from Freesound, plus the source link for anything added from a link. Sounds that need attribution are marked, and any sound with an unknown license is listed so you can check it before publishing.</li>
+    </ul>
+    <div class="callout">Files you downloaded from freesound.org yourself are recognized by their original file name (it starts with the sound's number and author), so they get credited too, as long as you haven't renamed the file.</div>
 
     <h2>Progress and completion</h2>
     <p>A real progress bar and a scrolling log show exactly what's rendering; the log also saves to a text file next to the export so it's not lost if you're not watching. A chime plays on completion (a different tone for success vs. failure) so you don't have to babysit a long export.</p>

@@ -20,6 +20,7 @@
       <a href="mixer.html">Mixer</a>
       <a href="remix.html" class="active">Remix (per-sound editor)</a>
       <a href="sound-groups.html">Sound Groups</a>
+      <a href="presets.html">Presets &amp; sharing</a>
       <a href="browse-sounds.html">Browse Sounds</a>
       <a href="export.html">Export</a>
       <a href="sleep-timer.html">Sleep timer</a>
@@ -41,11 +42,22 @@
 
     <h2>Trim and seamless looping</h2>
     <p>The waveform shows the whole file. Drag the <strong>Start</strong>/<strong>End</strong> handles (or type exact times/a length) to pick the region that loops. A <strong>Suggest a loop point</strong> button analyzes the file's energy and proposes a region that should loop cleanly on its own, which you can still fine-tune.</p>
-    <p>The <strong>Loop crossfade</strong> slider blends the tail of the loop into its head so the seam isn't audible — higher helps busy/textured audio like rain or crowds; 0 disables blending for content that's already a clean loop.</p>
+    <p>The <strong>Loop crossfade</strong> slider blends the tail of the loop into its head so the seam isn't audible — higher helps busy/textured audio like rain or crowds; 0 disables blending for content that's already a clean loop. The blend is equal-power, so noisy sounds don't dip in level mid-seam.</p>
+
+    <h3 id="loop-seam">The Loop seam view</h3>
+    <p>Above the crossfade slider, a <strong>Loop seam</strong> strip shows how the saved loop is laid out, the same way you'd build a seamless loop by hand in an audio editor: the second half of your trim, then the crossfade (both sides drawn with their fade curves), then the first half. The saved file starts and ends at the middle of your trim, so its restart is seamless without any blending; the only edit sits under the crossfade in the middle.</p>
+    <ul>
+      <li><strong>Drag an edge</strong> of the crossfade zone to make it longer or shorter; <strong>double-click</strong> an edge to reset it.</li>
+      <li><strong>Click or drag</strong> anywhere else on the strip to jump playback there.</li>
+      <li><strong>Listen to the seam</strong> plays a few seconds either side of the joint, so you can check it without waiting for the whole loop.</li>
+    </ul>
 
     <h2>Filters</h2>
     <h3>Highpass / Lowpass / Gain</h3>
     <p>Cut low rumble (highpass), cut high hiss (lowpass), and adjust overall level (gain) — the three basics, always available.</p>
+
+    <h3 id="pan">Pan</h3>
+    <p>A <strong>Pan</strong> slider under Gain moves the sound between the left and right speakers; double-click it to center. Loudness stays steady as you pan, and the setting applies in the live preview, in the Mixer, and in exports. Effect presets leave your pan alone; <strong>Reset filters</strong> centers it.</p>
 
     <h3>7-band parametric EQ</h3>
     <p>Seven bands, each independently one of eight filter shapes (peaking, low shelf, high shelf, low pass, high pass, band pass, notch, or off). Drag a node to set frequency/gain, scroll over it to adjust Q, or use the precise numeric fields. A background shows roughly where the sound's own energy sits, and a live spectrum analyzer shows what's actually playing while you preview.</p>
@@ -67,10 +79,17 @@
     <p>Speed changes tempo and pitch together (like a tape machine); Pitch shifts pitch alone without changing length or timing; Reverse plays the clip backwards. Speed applies live even to sounds too long to fully bake; Pitch and Reverse only take effect once saved.</p>
 
     <h2>Fluctuation — slow random drift</h2>
-    <p>Makes a looping sound's volume and/or pitch wander slowly and randomly over time — wind gusting stronger and weaker, rain swelling and fading — instead of sitting at one flat level forever. Set a lowest/highest/typical value, how many seconds between new targets, and how long each glide takes (or tick <strong>Fully random</strong> to roam the whole range with no shape at all).</p>
+    <p>Makes a looping sound's volume, pitch, and/or pan wander slowly and randomly over time — wind gusting stronger and weaker, rain swelling and fading, a bird call drifting across the room — instead of sitting in one place forever. Each has its own bar with three handles: lowest, highest, and a typical value in between. Set how many seconds pass between new targets and how long each glide takes (0 means the change happens instantly).</p>
+    <ul>
+      <li><strong>Bias</strong> (on by default) keeps the drift near the typical value most of the time, wandering to the extremes only now and then. Turn it off for an even spread across the whole range.</li>
+      <li><strong>Fully random</strong> ignores the handles and roams the whole range.</li>
+      <li><strong>Pitch drift</strong> works like a tape machine: a higher pitch also plays slightly faster, the same way in the Mixer and in exports.</li>
+      <li><strong>Pan drift</strong> starts from the sound's Pan slider position.</li>
+    </ul>
+    <p>If the sound is in a <a href="sound-groups.html#group-drift">Sound Group</a> whose drift overrides its own, Remix shows a note saying so.</p>
 
     <h2>Random Interval &amp; Scheduled details</h2>
-    <p>Both non-loop playback modes (see the <a href="mixer.html#playback-modes">Mixer page</a> for the overview) share fade in/out handles right on the waveform, and their own pitch/volume/speed randomization ranges — "Fully random pitch" and "Fully random gap" checkboxes make that explicit rather than a magic 0 meaning something different.</p>
+    <p>Both non-loop playback modes (see the <a href="mixer.html#playback-modes">Mixer page</a> for the overview) share fade in/out handles right on the waveform. Each time the sound plays, it can pick a new random <strong>pitch</strong>, <strong>volume</strong>, and <strong>pan</strong>. Each uses the same three-handle bar as Fluctuation, with its own Fully random and Bias toggles. A bar collapsed to a single value means no variation; drag a handle left or right to open it up. Random Interval's gap between plays has the same Fully random and Bias options.</p>
 
     <h2>Effect presets</h2>
     <p>One-click starting points for the filter section: Muffled, Over the Phone, On the Radio, Distant, Underwater, Echo, Reverb. They only touch the highpass/lowpass/gain/echo/reverb fields — your EQ, noise gate, noise reduction, and playback settings are left alone.</p>
@@ -79,7 +98,7 @@
     <p>Ctrl+Z / Ctrl+Shift+Z undo and redo your edits; a Cancel button discards everything since you opened the sound; leaving with unsaved changes prompts you first (with a "don't ask again" option). An A/B compare lets you snapshot the current EQ into a slot and flip back and forth while tuning.</p>
 
     <h2>Live edit vs. Saved audio</h2>
-    <p>Most controls preview live as you drag. A couple (Doppler, Reverse, Noise reduction, and Pitch beyond a rough approximation) can't be previewed in real time — a toggle next to Play switches between the live approximation and the actual saved/baked file, once a save exists that matches your current settings.</p>
+    <p>Most controls preview live as you drag. A few (Doppler, Reverse, Noise reduction, and Pitch beyond a rough approximation) can't be previewed in real time. A toggle next to Play switches between <strong>Live edit</strong> and <strong>Saved audio</strong>, the actual file the Mixer plays. If nothing is saved yet, switching to Saved audio saves first. Saved audio loops gaplessly, exactly as it will in your mix, and you can keep saving while you listen to it.</p>
 
     <h2>What comes next</h2>
     <div class="feature-grid">

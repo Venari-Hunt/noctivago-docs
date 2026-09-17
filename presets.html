@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Presets and Community Sharing — Noctívago Docs</title>
+<meta name="description" content="Save, export, and import Noctívago presets, and browse or share ambience presets with other users in the Community tab.">
+<link rel="canonical" href="https://venari-hunt.github.io/noctivago-docs/presets.html">
+<link rel="icon" href="assets/img/favicon.png">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+<header class="site-header">
+  <div class="wrap">
+    <img class="logo" src="assets/img/favicon.png" alt="">
+    <span class="brand">Noctívago</span>
+    <nav class="site-nav">
+      <a href="index.html">Home</a>
+      <a href="getting-started.html">Getting started</a>
+      <a href="mixer.html">Mixer</a>
+      <a href="remix.html">Remix (per-sound editor)</a>
+      <a href="sound-groups.html">Sound Groups</a>
+      <a href="presets.html" class="active">Presets &amp; sharing</a>
+      <a href="browse-sounds.html">Browse Sounds</a>
+      <a href="export.html">Export</a>
+      <a href="sleep-timer.html">Sleep timer</a>
+      <a href="faq.html">FAQ</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <div class="wrap">
+    <h1>Presets and sharing</h1>
+    <p class="subtitle">Save a mix, move it to another computer, or share it with other Noctívago users.</p>
+
+    <p>A preset is a saved mix: which sounds are in it, each one's volume, its <a href="sound-groups.html">Sound Groups</a>, whole-mix processing, and any <a href="mixer.html#presets">per-preset sound settings</a> you made in Remix. The <a href="mixer.html#presets">Mixer page</a> covers creating, loading, and autosaving presets; this page covers moving them between computers and people.</p>
+
+    <h2 id="files">Exporting and importing a preset file</h2>
+    <ol>
+      <li>Open <strong>Presets</strong> from the Mixer toolbar.</li>
+      <li>Click <strong>Export</strong> next to a preset. You get one <code>.ncvpreset</code> file with the mix settings and its sounds' audio.</li>
+      <li>On the other computer, open Presets and click <strong>Import preset…</strong>, then pick the file.</li>
+      <li>A review window lists every sound: whether it's already in your library, included in the file, or needs to be located. Confirm to add the preset.</li>
+    </ol>
+    <p>Sound Groups and per-preset sound settings travel with the file. A sound that's already in your library is reused as-is, and the preset's settings for it apply only inside that preset, so your other presets aren't affected.</p>
+
+    <h2 id="community">The Community tab</h2>
+    <p>The <strong>Community</strong> tab is a shared library of presets made by other Noctívago users. It has three views:</p>
+    <table>
+      <tr><th>View</th><th>What it's for</th></tr>
+      <tr><td><strong>Browse</strong></td><td>Search by name or tag, sort by newest or most downloaded, and scroll for more. <strong>Import</strong> opens the same review window as a preset file.</td></tr>
+      <tr><td><strong>Share a preset</strong></td><td>Pick one of your presets, give it a name, your name, a description, and tags, then publish it.</td></tr>
+      <tr><td><strong>My uploads</strong></td><td>Update a preset you shared (from any of your local presets) or delete it.</td></tr>
+    </table>
+
+    <h3>What gets uploaded</h3>
+    <ul>
+      <li><strong>Freesound sounds</strong> aren't uploaded. The preset links to them, and whoever imports it downloads them straight from Freesound, with credits kept.</li>
+      <li><strong>Everything else</strong> is uploaded, compressed so presets stay small. A preset can be up to 50 MB.</li>
+      <li>You must confirm you have the right to share the sounds before publishing.</li>
+    </ul>
+
+    <h3>No account needed</h3>
+    <p>Noctívago creates a private key on your computer the first time you share. That key is what lets you update or delete your own uploads, so they can only be managed from the computer you shared them from.</p>
+
+    <h3>Reporting</h3>
+    <p>Every preset in Browse has a <strong>Report</strong> button. A preset reported by several different people is hidden automatically until it's reviewed.</p>
+  </div>
+</main>
+
+</main>
+
+<footer><div class="wrap">Noctívago is an independent, early-stage project. This documentation covers the app as it exists today and will grow alongside it.</div></footer>
+</body>
+</html>
