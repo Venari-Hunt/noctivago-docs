@@ -1,0 +1,165 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>What's New — Noctívago Docs</title>
+<meta name="description" content="Recent Noctívago releases: new features and fixes, newest first.">
+<link rel="canonical" href="https://venari-hunt.github.io/noctivago-docs/changelog.html">
+<link rel="icon" href="assets/img/favicon.png">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+<header class="site-header">
+  <div class="wrap">
+    <img class="logo" src="assets/img/favicon.png" alt="">
+    <span class="brand">Noctívago</span>
+    <nav class="site-nav">
+      <a href="index.html">Home</a>
+      <a href="getting-started.html">Getting started</a>
+      <a href="mixer.html">Mixer</a>
+      <a href="remix.html">Remix (per-sound editor)</a>
+      <a href="sound-groups.html">Sound Groups</a>
+      <a href="presets.html">Presets &amp; sharing</a>
+      <a href="browse-sounds.html">Browse Sounds</a>
+      <a href="export.html">Export</a>
+      <a href="sleep-timer.html">Sleep timer</a>
+      <a href="faq.html">FAQ</a>
+      <a href="changelog.html" class="active">What's new</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <div class="wrap">
+    <h1>What's new</h1>
+    <p class="subtitle">The 15 most recent releases, newest first. The app updates itself; see the <a href="https://github.com/Venari-Hunt/Noctivago/blob/master/CHANGELOG.md">full changelog</a> for every release since the first one.</p>
+
+    <h2 id="v0.1.226">v0.1.226 — No more example tabs</h2>
+    <ul>
+      <li>The <strong>Hello</strong> tab is gone. It was a developer example that was never meant to ship, and a second deliberately broken example plugin was removed from the installer along with it.</li>
+    </ul>
+
+    <h2 id="v0.1.225">v0.1.225 — Pitch drift works on long sounds</h2>
+    <ul>
+      <li><strong>Fixed: pitch drift did nothing audible on loops longer than 10 minutes.</strong> Those sounds play straight from the file, and the drift only made them very slightly faster and slower. The pitch now really drifts, together with the tempo, the same way it already did for shorter sounds.</li>
+      <li>On those long sounds, Speed still changes only the tempo, not the pitch, even while pitch drift is on.</li>
+    </ul>
+
+    <h2 id="v0.1.224">v0.1.224 — Credits and scene details in the export info file</h2>
+    <ul>
+      <li>The info file an export writes now has a <strong>Credits</strong> section: every Freesound sound with its author, license and link, plus sounds added from a link. Creative Commons Attribution sounds are flagged as needing credit, and sounds with an unknown license are listed so you can check them.</li>
+      <li><strong>Files you downloaded from freesound.org yourself are recognized</strong> from Freesound's own file names (<code>12345__author__sound-name.wav</code>), both for new imports and for sounds already in your library. The app looks up their license when you export, and new imports get the sound's real name instead of the file name.</li>
+      <li>The info file also describes <strong>how the scene is set up</strong>: each sound's volume, whether it loops, plays at random intervals or on a clock, its pan, pitch, speed, drift and per-play randomization, notable effects, Sound Groups, and whole-mix processing.</li>
+      <li>The ready-to-paste AI prompt now asks for a description that keeps the credits exactly as written.</li>
+      <li>Sounds imported from Freesound in the app also keep the author's description and tags.</li>
+    </ul>
+
+    <h2 id="v0.1.223">v0.1.223 — Remix changes reliably reach the Mixer</h2>
+    <ul>
+      <li><strong>Fixed: the Mixer could erase a sound's Remix settings for the loaded preset.</strong> If the sound had been added to the mix during the session, changing any volume in the Mixer wiped the pan (or any other Remix edit) you had just saved for that preset. Settings you already lost this way need to be set again once.</li>
+      <li><strong>Fixed: Remix edits to a sound added during the session didn't reach the Mixer</strong> until you reloaded the preset.</li>
+      <li><strong>Fixed: quick back-to-back edits could leave the Mixer playing an older version</strong> of the sound (for example the previous pan).</li>
+      <li>The Mixer now re-renders a sound on its own whenever its saved audio no longer matches its settings, so pitch, reverse, Doppler and noise reduction keep applying and the loop stays seamless.</li>
+      <li>"Save as new preset" in the Mixer now copies each sound's Remix settings from the loaded preset.</li>
+    </ul>
+
+    <h2 id="v0.1.222">v0.1.222 — Click-free Saved audio, and the crossfade moves to the middle</h2>
+    <ul>
+      <li><strong>Fixed: a click every time Saved audio restarted in Remix.</strong> The preview player inserted a short silence (about 8 ms) at each restart, whatever the loop sounded like. It now loops without a gap, the same way the Mixer plays.</li>
+      <li><strong>Saved loops now follow the classic seamless-loop layout:</strong> the second half of your trim plays first, then the first half, with the end of the trim crossfading into its start in the middle. The loop's own restart lands on one continuous piece of the recording.</li>
+      <li><strong>Fixed: sounds with EQ or filters could click at the loop's joins.</strong> Each piece is now filtered with the audio just before it, so they join cleanly.</li>
+      <li><strong>New "Loop seam" view in Remix</strong>, replacing the orange zones on the waveform: the loop drawn the way it plays, with the crossfade in the middle. Drag an edge of the crossfade to resize it, double-click an edge to reset it, or click anywhere to jump there.</li>
+      <li><strong>Listen to the seam</strong> now plays through that middle crossfade when you're on Saved audio.</li>
+      <li>Your existing sounds re-render on their own the next time they play.</li>
+    </ul>
+
+    <h2 id="v0.1.221">v0.1.221 — Smoother loop seams, and a visual crossfade editor</h2>
+    <ul>
+      <li><strong>Fixed: saved loops had an audible skip at the seam.</strong> Every saved loop jumped back a fraction of a second in the middle of the clip, by exactly the crossfade length. Loops now join cleanly. Your existing sounds re-render on their own the next time they play.</li>
+      <li>The seam blend now keeps a steady level through the crossfade instead of dipping slightly, which was noticeable on noisy sounds like rain or fire. Live playback and saved audio now blend the same way.</li>
+      <li><strong>Crossfade on the waveform (Remix):</strong> orange zones at both ends of the trim show the crossfade. Drag their dots to change its length, or double-click a dot to reset it.</li>
+      <li><strong>Listen to the seam (Remix):</strong> plays the few seconds around the loop point, through the blend, then stops. Works with both Live edit and Saved audio.</li>
+      <li>A loop now plays as long as its trim minus the crossfade, the same in Live edit, Saved audio and the Mixer.</li>
+    </ul>
+
+    <h2 id="v0.1.220">v0.1.220 — Community tab is live</h2>
+    <ul>
+      <li>New <strong>Community</strong> tab: browse and search ambience presets shared by other Noctívago users, and import one with a click. Sounds from Freesound are downloaded from Freesound; the rest come with the preset.</li>
+      <li><strong>Share a preset</strong> from the same tab. Your sounds are compressed before uploading, and you can update or delete what you shared under <strong>My uploads</strong>.</li>
+      <li>See something that shouldn't be there? Use <strong>Report</strong> on its card.</li>
+      <li>A shared preset can be up to 50 MB after compression.</li>
+    </ul>
+
+    <h2 id="v0.1.219">v0.1.219 — Community presets (groundwork) and fuller preset files</h2>
+    <ul>
+      <li><strong>Exported preset files now keep Sound Groups and per-preset sound settings.</strong> Before, a preset file dropped its groups and any sound tweaks saved only in that preset, so an imported mix could sound different from the original. Older preset files still import as before.</li>
+      <li>A preset file can now list a Freesound sound instead of carrying its audio. On import it's downloaded from Freesound, or matched to the same Freesound sound already in your library.</li>
+      <li>The import summary now tells you if any sounds couldn't be added.</li>
+      <li>Groundwork for a new <strong>Community</strong> tab to browse, import and share ambience presets made by other users. It stays hidden until the community server is online.</li>
+    </ul>
+
+    <h2 id="v0.1.218">v0.1.218 — Groups can drift each sound on its own; per-play pan; Bias toggles</h2>
+    <ul>
+      <li>Every Sound Group drift bar (Remix, Group mode) has a new <strong>Each sound on its own</strong> toggle. With it on, every sound in the group drifts separately using the group's settings, instead of the whole group moving together, so they don't all swell or wander at the same moment.</li>
+      <li>Groups now have <strong>Pitch drift</strong> too. A group can only shift pitch sound by sound, so that bar is always "each sound on its own".</li>
+      <li>Random Interval and Scheduled sounds get a <strong>Pan</strong> range (a random left/right position every play), and <strong>Volume</strong> now has "Fully random" and "Bias" like Pitch does. Pitch, Volume and Pan all use the same three-circle bar as the drift controls. Existing pitch/volume settings carry over as they were.</li>
+      <li>When a group's drift bar is set to each sound on its own, its Random Interval and Scheduled sounds use that bar's range (and bias) for their per-play pitch, volume or pan. Remix shows a note on a sound when its group is doing this.</li>
+      <li><strong>Bias</strong> is now an on/off toggle on every drift bar and every per-play bar. With it off, the middle circle disappears and values are picked evenly between the outer circles. Existing drift keeps bias on.</li>
+      <li>On any of these bars, when the outer circles sit together (the "no variation" default), dragging now pulls them apart in the direction you drag.</li>
+      <li>Everything here is heard live in the Mixer and baked into exports.</li>
+    </ul>
+
+    <h2 id="v0.1.217">v0.1.217 — Pan drift (Fluctuation for left/right)</h2>
+    <ul>
+      <li>Fluctuation has a new <strong>Pan drift</strong> bar next to Volume and Pitch drift (Remix, Sound mode): the sound slowly wanders left and right on its own. It works like the other two: drag the outer circles for how far it goes each way, the middle one for where it sits most of the time, and use "Change every", "Transition" and "Fully random" the same way. It starts from wherever the Pan slider puts the sound.</li>
+      <li>Sound Groups get Pan drift too (Remix, Group mode): the whole group wanders together. While a group's Pan drift is on, it replaces its sounds' own pan drift; their Pan slider positions still apply. Remix shows a note on a sound when its group is doing this.</li>
+      <li>Heard live in the Remix preview and the Mixer, and baked into exports. Export time only goes up for sounds or groups that actually use pan drift (about 1–2 seconds per 10 minutes of audio).</li>
+      <li>Fixed the Fluctuation help text, which still said drift isn't baked into exports; it has been since v0.1.171.</li>
+    </ul>
+
+    <h2 id="v0.1.216">v0.1.216 — Stereo pan per sound</h2>
+    <ul>
+      <li>New <strong>Pan</strong> slider in Remix (Sound mode, Filters section, under Gain): move a sound anywhere between the left and right speaker. Double-click it to center.</li>
+      <li>You hear it live while editing and in the Mixer, and it's saved into exports exactly the same way.</li>
+      <li>Loudness stays steady while you pan. A mono sound gets at most 3 dB louder in one speaker when panned all the way, instead of jumping.</li>
+      <li>Effect presets (Muffled, Phone…) leave your pan alone; Reset filters re-centers it.</li>
+      <li>Sounds left at center are untouched, and exports don't get any slower.</li>
+    </ul>
+
+    <h2 id="v0.1.215">v0.1.215 — Sound Group reverb sliders work again under Occlusion</h2>
+    <ul>
+      <li>BUG FIX: on a Sound Group with Occlusion turned up, the Reverb Mix and Size sliders could do nothing at all. Occlusion set a minimum reverb (at 100%: 40% Mix, 900 ms Size), and any manual setting below that was ignored in both the Mixer and exports. Occlusion now adds its reverb on top of your own setting, so every slider move is audible at any Occlusion level.</li>
+      <li>Heads-up: groups that combine Occlusion with a manual reverb setting will sound a little wetter than before (e.g. Occlusion 100% + Mix 25% now plays at 55% instead of 40%). Pull Mix down if it's too much.</li>
+    </ul>
+
+    <h2 id="v0.1.214">v0.1.214 — "Saved audio" toggle no longer greys out after saving</h2>
+    <ul>
+      <li>BUG FIX: saving while on "Saved audio" in Remix greyed out the Live edit / Saved audio toggle and dropped you back to Live edit. Saving now keeps you on Saved audio, keeps playing from the same spot, and you hear the new version.</li>
+      <li>The toggle is never greyed out anymore. On a sound that hasn't been saved yet, clicking it saves and renders the sound first, then switches to Saved audio.</li>
+    </ul>
+
+    <h2 id="v0.1.213">v0.1.213 — Pitch drift exports ~20x faster and matches the Mixer; Sound Group timing fix</h2>
+    <ul>
+      <li>BUG FIX: in exports made with v0.1.210–v0.1.212, a Sound Group made only of Random Interval / Scheduled sounds played early — everything in it was shifted by however late the group's first sound was (e.g. thunder meant for 0:30 and 1:00 played at 0:00 and 0:30). Fixed; sounds land exactly when they should again.</li>
+      <li>Pitch Fluctuation (slow pitch drift on a looping sound) now exports the same way the Mixer plays it: tape-style, where a higher pitch also plays a touch faster. Exports used to use a heavier method that kept speed fixed, so they didn't quite match what you heard — and it was by far the slowest part of the export. Measured on a one-hour bake: 3 minutes → 8 seconds per drifting sound. On sounds like rain the speed change isn't audible.</li>
+      <li>This also covers drifting sounds inside a Sound Group, which was most of the time the "Applying Sound Group processing" step used to take.</li>
+      <li>Loop sounds longer than 10 minutes keep the old method (too long to process this way in memory).</li>
+    </ul>
+
+    <h2 id="v0.1.212">v0.1.212 — Fluctuation baking is much faster, and export logs name their version</h2>
+    <ul>
+      <li>Baking Fluctuation (slow volume/pitch drift) into an export was doing three full-length passes per sound — building the looped track, then re-reading it for the pitch drift, then re-reading that for the volume drift. It's now one pass. It also used to bake one sound at a time even though each is completely independent; several now bake at once. On a real export where this was 57% of the total time (two sounds, 8 minutes between them), this should be the single biggest remaining saving.</li>
+      <li>Sound Group processing got the same treatment — a group's member sounds are no longer prepared strictly one after another.</li>
+      <li><code>export-log.txt</code> now starts with the app version and date it was made with, so two logs can actually be compared.</li>
+    </ul>
+
+    <p><a href="https://github.com/Venari-Hunt/Noctivago/blob/master/CHANGELOG.md">Older releases →</a></p>
+  </div>
+</main>
+
+</main>
+
+<footer><div class="wrap">Noctívago is an independent, early-stage project. This documentation covers the app as it exists today and will grow alongside it.</div></footer>
+</body>
+</html>
