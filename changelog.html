@@ -35,6 +35,14 @@
     <h1>What's new</h1>
     <p class="subtitle">The 15 most recent releases, newest first. The app updates itself; see the <a href="https://github.com/Venari-Hunt/Noctivago/blob/master/CHANGELOG.md">full changelog</a> for every release since the first one.</p>
 
+    <h2 id="v0.1.227">v0.1.227 — Stronger panning, Speed bar, and Remix setting fixes</h2>
+    <ul>
+      <li><strong>Panning is more noticeable.</strong> Wide stereo recordings (field recordings of frogs, rain, crowds) barely moved before: a 25% pan made one side only 0.7 dB louder. They now move like they would in a mixing app (about 2 dB at 25%, 5 dB at 50%, 11 dB at 75%). Hard left and right are unchanged. Sounds you have already panned will sound a bit wider, and their saved audio re-renders once.</li>
+      <li><strong>Speed for Random Interval and Scheduled sounds now uses the same three-circle bar</strong> as Pitch, Volume and Pan, with Fully random and Bias options.</li>
+      <li><strong>Fixed: Remix could overwrite a sound's settings for the loaded preset.</strong> After visiting Group or Preset mode, opening a sound in Sound mode showed its shared default settings, and saving replaced the preset's own settings with them.</li>
+      <li><strong>Fixed: just opening some Random Interval or Scheduled sounds in Remix counted as an edit</strong> and auto-saved.</li>
+    </ul>
+
     <h2 id="v0.1.226">v0.1.226 — No more example tabs</h2>
     <ul>
       <li>The <strong>Hello</strong> tab is gone. It was a developer example that was never meant to ship, and a second deliberately broken example plugin was removed from the installer along with it.</li>
@@ -145,13 +153,6 @@
       <li>Pitch Fluctuation (slow pitch drift on a looping sound) now exports the same way the Mixer plays it: tape-style, where a higher pitch also plays a touch faster. Exports used to use a heavier method that kept speed fixed, so they didn't quite match what you heard — and it was by far the slowest part of the export. Measured on a one-hour bake: 3 minutes → 8 seconds per drifting sound. On sounds like rain the speed change isn't audible.</li>
       <li>This also covers drifting sounds inside a Sound Group, which was most of the time the "Applying Sound Group processing" step used to take.</li>
       <li>Loop sounds longer than 10 minutes keep the old method (too long to process this way in memory).</li>
-    </ul>
-
-    <h2 id="v0.1.212">v0.1.212 — Fluctuation baking is much faster, and export logs name their version</h2>
-    <ul>
-      <li>Baking Fluctuation (slow volume/pitch drift) into an export was doing three full-length passes per sound — building the looped track, then re-reading it for the pitch drift, then re-reading that for the volume drift. It's now one pass. It also used to bake one sound at a time even though each is completely independent; several now bake at once. On a real export where this was 57% of the total time (two sounds, 8 minutes between them), this should be the single biggest remaining saving.</li>
-      <li>Sound Group processing got the same treatment — a group's member sounds are no longer prepared strictly one after another.</li>
-      <li><code>export-log.txt</code> now starts with the app version and date it was made with, so two logs can actually be compared.</li>
     </ul>
 
     <p><a href="https://github.com/Venari-Hunt/Noctivago/blob/master/CHANGELOG.md">Older releases →</a></p>
