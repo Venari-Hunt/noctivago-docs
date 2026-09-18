@@ -41,7 +41,7 @@
     <ul>
       <li><strong>Preset indicator</strong> — shows which preset (if any) the current mix is built from.</li>
       <li><strong>Play all</strong> — starts or stops every sound currently in the mix at once.</li>
-      <li><strong>Volume</strong> — the master volume for the whole mix. It's bipolar: the center is a sound's own recorded level, drag left to quiet it down, right to boost it.</li>
+      <li><strong>Volume</strong> — the master volume for the whole mix. It's bipolar: the center is a sound's own recorded level, drag left to quiet it down, right to boost it. A small level meter next to it turns red if the whole mix clips.</li>
       <li><strong>Sleep timer</strong> (the moon icon) — see the <a href="sleep-timer.html">Sleep timer</a> page.</li>
       <li><strong>Presets</strong> — save the current mix, or load/delete a saved one.</li>
       <li><strong>Settings</strong> (gear icon) — auto-update, eager-baking, and other app-wide options.</li>
@@ -50,6 +50,9 @@
 
     <h2>Your sound library</h2>
     <p>Every sound you've ever added lives here, whether or not it's currently in your mix. Each row shows the sound's name, length, and file size, its tags, an <strong>In Mix</strong> toggle, a volume slider, mute, solo, and remove.</p>
+
+    <h3 id="clip-meters">Clipping lights</h3>
+    <p>Every sound in the Mixer has a small live level meter. If a sound gets loud enough to clip, its meter turns red and <strong>stays red until you click it</strong>, so you can tell which sound was responsible even if it only clipped for a moment while you weren't looking. Clicking the whole-mix meter (next to Volume) clears every red light at once. A Sound Group's badge also turns red when the group as a whole clips, even if none of its sounds do on their own.</p>
 
     <h3>Search, sort, and group</h3>
     <p>A search bar filters the library by name. A sort dropdown covers name, date added, date created, or a custom drag-to-reorder order. A grouping dropdown can organize the list alphabetically, by date, by tag, or by <a href="sound-groups.html">Sound Group</a> (with an "Ungrouped" section for anything left out).</p>
