@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Plugins &amp; Settings — Noctívago Docs</title>
+<meta name="description" content="Install, update and switch off Noctívago plugins (Remix, Export, Composite, Browse Sounds, Community), and find your way around the Settings window.">
+<link rel="canonical" href="https://venari-hunt.github.io/noctivago-docs/plugins.html">
+<link rel="icon" href="assets/img/favicon.png">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+<header class="site-header">
+  <div class="wrap">
+    <img class="logo" src="assets/img/favicon.png" alt="">
+    <span class="brand">Noctívago</span>
+    <nav class="site-nav">
+      <a href="index.html">Home</a>
+      <a href="getting-started.html">Getting started</a>
+      <a href="mixer.html">Mixer</a>
+      <a href="remix.html">Remix (per-sound editor)</a>
+      <a href="sound-groups.html">Sound Groups</a>
+      <a href="presets.html">Presets &amp; sharing</a>
+      <a href="browse-sounds.html">Browse Sounds</a>
+      <a href="export.html">Export</a>
+      <a href="sleep-timer.html">Sleep timer</a>
+      <a href="plugins.html" class="active">Plugins &amp; Settings</a>
+      <a href="faq.html">FAQ</a>
+      <a href="changelog.html">What's new</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <div class="wrap">
+    <h1>Plugins &amp; Settings</h1>
+    <p class="subtitle">Noctívago is the Mixer plus the extras you choose. Everything else is a plugin you can install, update or switch off.</p>
+
+    <h2>The official plugins</h2>
+    <table>
+      <tr><th>Plugin</th><th>What it adds</th></tr>
+      <tr><td><strong><a href="remix.html">Remix</a></strong></td><td>The per-sound editor: trim, filters, EQ, pitch, playback modes, Sound Groups.</td></tr>
+      <tr><td><strong><a href="export.html">Export</a></strong></td><td>Bake a mix down to an audio or video file.</td></tr>
+      <tr><td><strong>Composite</strong></td><td>Combine several sounds into one new sound on a small timeline.</td></tr>
+      <tr><td><strong><a href="browse-sounds.html">Browse Sounds</a></strong></td><td>Search Freesound and YouTube and import sounds.</td></tr>
+      <tr><td><strong><a href="presets.html">Community</a></strong></td><td>Share presets and download other people's.</td></tr>
+    </table>
+    <p>Each one lives in its own public repository under <a href="https://github.com/Venari-Hunt">Venari-Hunt</a> (<code>noctivago-remix</code>, <code>noctivago-export</code>, and so on) with its own releases.</p>
+
+    <h2>Getting them</h2>
+    <ul>
+      <li><strong>Already using Noctívago?</strong> Nothing to do. The first launch after the update installs the plugins you already had.</li>
+      <li><strong>Fresh install?</strong> The Mixer shows an <strong>Add the extras</strong> card at the top. One click installs all of them. You can close it and add them later from Settings.</li>
+    </ul>
+
+    <h2>The Settings window</h2>
+    <p>Click the gear icon in the Mixer toolbar. Settings opens as its own window with a sidebar:</p>
+    <ul>
+      <li><strong>General</strong>: updates, keep playing when closed, seamless-loop preparation.</li>
+      <li><strong>Library</strong>: <a href="getting-started.html">watched folders</a>.</li>
+      <li><strong>Community plugins</strong>: your installed plugins, each with an on/off switch and an Uninstall button, plus Restricted mode, <strong>Browse</strong> and <strong>Check for updates</strong>.</li>
+      <li>One page per plugin that has its own options, for example Browse Sounds' Freesound and YouTube settings.</li>
+    </ul>
+    <p>Turning a plugin on or off applies after a restart; a banner offers <strong>Restart now</strong>.</p>
+
+    <h2>Browsing, installing and updating</h2>
+    <p><strong>Browse</strong> opens the plugin list. Search it, sort by <em>Most downloaded</em>, <em>Name</em> or <em>Recently updated</em>, or show only what you have installed. Pick a plugin to read its description, see its download count and version, and install, update, switch on or off, or uninstall it.</p>
+    <p><strong>Check for updates</strong> looks for new versions of everything you have installed; <strong>Update all</strong> installs them in one go. A plugin only updates to a version your copy of Noctívago can run, so an older app never gets a plugin it can't load.</p>
+
+    <h2 id="restricted-mode">Restricted mode</h2>
+    <p>On by default. While it's on, only official plugins can be installed or loaded. To try a plugin made by someone else, turn Restricted mode off in <strong>Settings → Community plugins</strong>. Third-party plugins run with the same access as the app itself, so only install ones you trust.</p>
+
+    <h2>Making your own</h2>
+    <p>Start from the template repository <a href="https://github.com/Venari-Hunt/noctivago-sample-plugin">noctivago-sample-plugin</a>. Tagging a release builds and publishes it for you.</p>
+  </div>
+</main>
+</main>
+
+<footer><div class="wrap">Noctívago is an independent, early-stage project. This documentation covers the app as it exists today and will grow alongside it.</div></footer>
+</body>
+</html>

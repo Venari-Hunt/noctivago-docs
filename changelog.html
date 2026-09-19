@@ -24,6 +24,7 @@
       <a href="browse-sounds.html">Browse Sounds</a>
       <a href="export.html">Export</a>
       <a href="sleep-timer.html">Sleep timer</a>
+      <a href="plugins.html">Plugins &amp; Settings</a>
       <a href="faq.html">FAQ</a>
       <a href="changelog.html" class="active">What's new</a>
     </nav>
@@ -34,6 +35,16 @@
   <div class="wrap">
     <h1>What's new</h1>
     <p class="subtitle">The 15 most recent releases, newest first. The app updates itself; see the <a href="https://github.com/Venari-Hunt/Noctivago/blob/master/CHANGELOG.md">full changelog</a> for every release since the first one.</p>
+
+    <h2 id="v0.1.235">v0.1.235 — Plugins you choose, a new Settings window, and a Clip report</h2>
+    <ul>
+      <li><strong>Remix, Export, Composite, Browse Sounds and Community are now plugins you download.</strong> If you already use them, nothing changes: the app installs them for you on first launch after this update. A fresh install starts with just the Mixer and an "Add the extras" card that installs them in one click.</li>
+      <li><strong>Settings is a new window with a sidebar</strong>, like Obsidian's: General, Library, Community plugins, and a page for each plugin that has options. Every plugin has an on/off switch, so you can turn one off without uninstalling it.</li>
+      <li><strong>Browse plugins</strong> from Settings → Community plugins: search, sort by downloads, name or last update, read each plugin's description, and install, update or remove it. "Check for updates" plus "Update all" keep them current, and each plugin only updates to a version your app can run.</li>
+      <li><strong>Restricted mode</strong> (on by default) blocks plugins from anyone but us. Turn it off in Settings → Community plugins to install third-party plugins.</li>
+      <li><strong>Click a red clip light to see what clipped.</strong> The Clip report shows which sound, Sound Group or the whole mix went over, by how much, and offers a one-click fix (lower that sound, the group, or every sound in the mix by the same amount), with Undo. Clicking the whole-mix meter while it isn't red still clears every light.</li>
+      <li><strong>Fixed: a Fluctuation bar's min/max labels could show up stretched, mirrored or upside-down</strong> in Remix. If you still see this after updating, please tell us.</li>
+    </ul>
 
     <h2 id="v0.1.234">v0.1.234 — Edit the info file's AI prompt</h2>
     <ul>
@@ -132,14 +143,6 @@
       <li><strong>Crossfade on the waveform (Remix):</strong> orange zones at both ends of the trim show the crossfade. Drag their dots to change its length, or double-click a dot to reset it.</li>
       <li><strong>Listen to the seam (Remix):</strong> plays the few seconds around the loop point, through the blend, then stops. Works with both Live edit and Saved audio.</li>
       <li>A loop now plays as long as its trim minus the crossfade, the same in Live edit, Saved audio and the Mixer.</li>
-    </ul>
-
-    <h2 id="v0.1.220">v0.1.220 — Community tab is live</h2>
-    <ul>
-      <li>New <strong>Community</strong> tab: browse and search ambience presets shared by other Noctívago users, and import one with a click. Sounds from Freesound are downloaded from Freesound; the rest come with the preset.</li>
-      <li><strong>Share a preset</strong> from the same tab. Your sounds are compressed before uploading, and you can update or delete what you shared under <strong>My uploads</strong>.</li>
-      <li>See something that shouldn't be there? Use <strong>Report</strong> on its card.</li>
-      <li>A shared preset can be up to 50 MB after compression.</li>
     </ul>
 
     <p><a href="https://github.com/Venari-Hunt/Noctivago/blob/master/CHANGELOG.md">Older releases →</a></p>
