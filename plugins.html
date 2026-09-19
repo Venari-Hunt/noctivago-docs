@@ -61,11 +61,16 @@
       <li><strong>Community plugins</strong>: your installed plugins, each with an on/off switch and an Uninstall button, plus Restricted mode, <strong>Browse</strong> and <strong>Check for updates</strong>.</li>
       <li>One page per plugin that has its own options, for example Browse Sounds' Freesound and YouTube settings.</li>
     </ul>
-    <p>Turning a plugin on or off applies after a restart; a banner offers <strong>Restart now</strong>.</p>
+    <p>Turning a plugin on or off, installing, updating or removing one happens right away, with no restart. If you're using that plugin at the moment (its tab is open, you have unsaved changes, or an export is running), the change waits until you're done. Settings tells you it's waiting, and a notification says when it's finished.</p>
 
     <h2>Browsing, installing and updating</h2>
     <p><strong>Browse</strong> opens the plugin list. Search it, sort by <em>Most downloaded</em>, <em>Name</em> or <em>Recently updated</em>, or show only what you have installed. Pick a plugin to read its description, see its download count and version, and install, update, switch on or off, or uninstall it.</p>
     <p><strong>Check for updates</strong> looks for new versions of everything you have installed; <strong>Update all</strong> installs them in one go. A plugin only updates to a version your copy of Noctívago can run, so an older app never gets a plugin it can't load.</p>
+
+    <h2 id="auto-update">Automatic updates</h2>
+    <p>Plugins update on their own: Noctívago checks shortly after it starts and then every few hours, and swaps in a new version as soon as that plugin isn't in use. To update only by hand, turn off <strong>Update plugins automatically</strong> in <strong>Settings → Community plugins</strong>. (Needs Noctívago 0.1.238 or newer.)</p>
+    <h2 id="notifications">Notifications</h2>
+    <p>Anything Noctívago does without you asking shows a notification in the bottom-left corner: a plugin updated, an update waiting for you to finish with a plugin, or a plugin that couldn't start. They stay until you close them (✕), so you won't miss one that happened while you were away.</p>
 
     <h2 id="restricted-mode">Restricted mode</h2>
     <p>On by default. While it's on, only official plugins can be installed or loaded. To try a plugin made by someone else, turn Restricted mode off in <strong>Settings → Community plugins</strong>. Third-party plugins run with the same access as the app itself, so only install ones you trust.</p>

@@ -36,6 +36,13 @@
     <h1>What's new</h1>
     <p class="subtitle">The 15 most recent releases, newest first. The app updates itself; see the <a href="https://github.com/Venari-Hunt/Noctivago/blob/master/CHANGELOG.md">full changelog</a> for every release since the first one.</p>
 
+    <h2 id="v0.1.238">v0.1.238 — Plugins update themselves, no restart needed</h2>
+    <ul>
+      <li><strong>Plugins now update on their own.</strong> Noctívago checks for plugin updates shortly after it starts and every few hours. You can turn this off in Settings → Community plugins → "Update plugins automatically".</li>
+      <li><strong>Installing, updating, removing or switching a plugin on or off happens right away.</strong> No more "Restart Noctívago". If you're using the plugin at that moment (its tab is open, you have unsaved changes, or an export is running), the change waits until you're done.</li>
+      <li><strong>Notifications show what happened in the background:</strong> a plugin updated, an update waiting for you to finish, or a plugin that couldn't start. They stay until you close them, so you won't miss one that happened while you were away.</li>
+    </ul>
+
     <h2 id="v0.1.237">v0.1.237 — Spectral repair</h2>
     <ul>
       <li><strong>Remove a sound hiding inside another one.</strong> Remix (update it to 1.1.0 from Settings → Community plugins) has a new Spectral repair panel under the EQ: it shows the sound as a spectrogram (time across, pitch up), and you drag a box around a cough, a bird chirp or a phone buzz to turn just that down. Everything outside the box stays as it was. It's applied when you Save; switch the preview to Saved audio to hear it.</li>
@@ -126,15 +133,6 @@
       <li>The info file also describes <strong>how the scene is set up</strong>: each sound's volume, whether it loops, plays at random intervals or on a clock, its pan, pitch, speed, drift and per-play randomization, notable effects, Sound Groups, and whole-mix processing.</li>
       <li>The ready-to-paste AI prompt now asks for a description that keeps the credits exactly as written.</li>
       <li>Sounds imported from Freesound in the app also keep the author's description and tags.</li>
-    </ul>
-
-    <h2 id="v0.1.223">v0.1.223 — Remix changes reliably reach the Mixer</h2>
-    <ul>
-      <li><strong>Fixed: the Mixer could erase a sound's Remix settings for the loaded preset.</strong> If the sound had been added to the mix during the session, changing any volume in the Mixer wiped the pan (or any other Remix edit) you had just saved for that preset. Settings you already lost this way need to be set again once.</li>
-      <li><strong>Fixed: Remix edits to a sound added during the session didn't reach the Mixer</strong> until you reloaded the preset.</li>
-      <li><strong>Fixed: quick back-to-back edits could leave the Mixer playing an older version</strong> of the sound (for example the previous pan).</li>
-      <li>The Mixer now re-renders a sound on its own whenever its saved audio no longer matches its settings, so pitch, reverse, Doppler and noise reduction keep applying and the loop stays seamless.</li>
-      <li>"Save as new preset" in the Mixer now copies each sound's Remix settings from the loaded preset.</li>
     </ul>
 
     <p><a href="https://github.com/Venari-Hunt/Noctivago/blob/master/CHANGELOG.md">Older releases →</a></p>
