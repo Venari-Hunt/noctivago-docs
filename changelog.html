@@ -36,6 +36,12 @@
     <h1>What's new</h1>
     <p class="subtitle">The 15 most recent releases, newest first. The app updates itself; see the <a href="https://github.com/Venari-Hunt/Noctivago/blob/master/CHANGELOG.md">full changelog</a> for every release since the first one.</p>
 
+    <h2 id="v0.1.236">v0.1.236 — Smaller files for recordings and downloads</h2>
+    <ul>
+      <li><strong>Recordings, links, YouTube downloads, Browse Sounds imports and new Composites now take about a third to half the disk space.</strong> They're saved as lossless FLAC instead of WAV, so they sound exactly the same. Sounds already in your library are left as they are.</li>
+      <li><strong>Fixed: deleting a duplicated sound could break the other copy.</strong> A duplicate shares its audio file with the sound it was copied from, and deleting either one deleted that file, so the other copy went missing. The file is now kept until the last sound using it is deleted.</li>
+    </ul>
+
     <h2 id="v0.1.235">v0.1.235 — Plugins you choose, a new Settings window, and a Clip report</h2>
     <ul>
       <li><strong>Remix, Export, Composite, Browse Sounds and Community are now plugins you download.</strong> If you already use them, nothing changes: the app installs them for you on first launch after this update. A fresh install starts with just the Mixer and an "Add the extras" card that installs them in one click.</li>
@@ -134,15 +140,6 @@
       <li><strong>New "Loop seam" view in Remix</strong>, replacing the orange zones on the waveform: the loop drawn the way it plays, with the crossfade in the middle. Drag an edge of the crossfade to resize it, double-click an edge to reset it, or click anywhere to jump there.</li>
       <li><strong>Listen to the seam</strong> now plays through that middle crossfade when you're on Saved audio.</li>
       <li>Your existing sounds re-render on their own the next time they play.</li>
-    </ul>
-
-    <h2 id="v0.1.221">v0.1.221 — Smoother loop seams, and a visual crossfade editor</h2>
-    <ul>
-      <li><strong>Fixed: saved loops had an audible skip at the seam.</strong> Every saved loop jumped back a fraction of a second in the middle of the clip, by exactly the crossfade length. Loops now join cleanly. Your existing sounds re-render on their own the next time they play.</li>
-      <li>The seam blend now keeps a steady level through the crossfade instead of dipping slightly, which was noticeable on noisy sounds like rain or fire. Live playback and saved audio now blend the same way.</li>
-      <li><strong>Crossfade on the waveform (Remix):</strong> orange zones at both ends of the trim show the crossfade. Drag their dots to change its length, or double-click a dot to reset it.</li>
-      <li><strong>Listen to the seam (Remix):</strong> plays the few seconds around the loop point, through the blend, then stops. Works with both Live edit and Saved audio.</li>
-      <li>A loop now plays as long as its trim minus the crossfade, the same in Live edit, Saved audio and the Mixer.</li>
     </ul>
 
     <p><a href="https://github.com/Venari-Hunt/Noctivago/blob/master/CHANGELOG.md">Older releases →</a></p>
