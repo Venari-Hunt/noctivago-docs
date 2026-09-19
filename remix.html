@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Remix: Trim, Filters, EQ, Reverb, Noise Reduction — Noctívago Docs</title>
-<meta name="description" content="Noctívago's Remix tab: trim a seamless loop, shape a sound with EQ/reverb/echo/noise gate/noise reduction, add a Doppler pass-by effect, change speed and pitch, and randomize playback.">
+<title>Remix: Trim, Filters, EQ, Reverb, Noise Reduction, Spectral Repair — Noctívago Docs</title>
+<meta name="description" content="Noctívago's Remix tab: trim a seamless loop, shape a sound with EQ/reverb/echo/noise gate/noise reduction/spectral repair, add a Doppler pass-by effect, change speed and pitch, and randomize playback.">
 <link rel="canonical" href="https://venari-hunt.github.io/noctivago-docs/remix.html">
 <link rel="icon" href="assets/img/favicon.png">
 <link rel="stylesheet" href="assets/style.css">
@@ -75,6 +75,11 @@
     <p>For a steady background noise — tape hiss, mains hum, an air conditioner — that's present even under the sound you actually want (the noise gate only handles the quiet gaps, this handles noise that's there constantly). Mark a stretch of the trimmed loop that's noise-only via "Noise from"/"Noise to" (or the one-click "Noise sample from loop start" button), set a strength, and save — Noctívago measures that stretch and subtracts its noise profile from the whole clip.</p>
     <div class="callout">There's no live preview for noise reduction (there's no real-time way to do this kind of processing) — flip the preview toggle to "Saved audio" after saving to hear the result.</div>
 
+    <h3 id="spectral-repair">Spectral repair</h3>
+    <p>For a short sound hiding inside another one: a cough in the rain, a bird over the wind, a phone buzz. The Spectral repair panel under the EQ shows your trim as a spectrogram, with time across and pitch going up, so the unwanted sound shows up as a bright spot. Drag a box around it and just that box gets turned down (40 dB by default; change it with <strong>Reduce by</strong>). Everything outside the box, including the same pitches a moment earlier or later, stays as it was.</p>
+    <p>Drag a box to move it, drag its edge to resize it, and right-click it (or select it and press Delete) to remove it. <strong>Clear all</strong> removes every box. Needs Noctívago 0.1.237 and Remix 1.1.0 or newer.</p>
+    <div class="callout">Like noise reduction, spectral repair is applied when you Save. Flip the preview toggle to "Saved audio" to hear the result.</div>
+
     <h2>Doppler (pass-by effect)</h2>
     <p>Simulates a sound passing by: pitch rises approaching a "closest point" you can drag on the waveform, then falls away after it, with a Sharpness control for how gradual vs. sudden the effect feels.</p>
 
@@ -101,7 +106,7 @@
     <p>Ctrl+Z / Ctrl+Shift+Z undo and redo your edits; a Cancel button discards everything since you opened the sound; leaving with unsaved changes prompts you first (with a "don't ask again" option). An A/B compare lets you snapshot the current EQ into a slot and flip back and forth while tuning.</p>
 
     <h2>Live edit vs. Saved audio</h2>
-    <p>Most controls preview live as you drag. A few (Doppler, Reverse, Noise reduction, and Pitch beyond a rough approximation) can't be previewed in real time. A toggle next to Play switches between <strong>Live edit</strong> and <strong>Saved audio</strong>, the actual file the Mixer plays. If nothing is saved yet, switching to Saved audio saves first. Saved audio loops gaplessly, exactly as it will in your mix, and you can keep saving while you listen to it.</p>
+    <p>Most controls preview live as you drag. A few (Doppler, Reverse, Noise reduction, Spectral repair, and Pitch beyond a rough approximation) can't be previewed in real time. A toggle next to Play switches between <strong>Live edit</strong> and <strong>Saved audio</strong>, the actual file the Mixer plays. If nothing is saved yet, switching to Saved audio saves first. Saved audio loops gaplessly, exactly as it will in your mix, and you can keep saving while you listen to it.</p>
 
     <h2>What comes next</h2>
     <div class="feature-grid">
