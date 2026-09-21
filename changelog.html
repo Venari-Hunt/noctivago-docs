@@ -36,6 +36,11 @@
     <h1>What's new</h1>
     <p class="subtitle">The 15 most recent releases, newest first. The app updates itself; see the <a href="https://github.com/Venari-Hunt/Noctivago/blob/master/CHANGELOG.md">full changelog</a> for every release since the first one.</p>
 
+    <h2 id="v0.1.242">v0.1.242 — A YouTube import that fails now says what is missing</h2>
+    <ul>
+      <li><strong>Fixed: if antivirus removes the YouTube downloader from the install, importing a link now says so.</strong> The downloader (yt-dlp.exe) ships inside the installer, but antivirus software quarantines it by mistake fairly often. When that happened, a YouTube link failed with a message about the link not being an audio file, which blamed the link instead of the missing file — and Freesound kept working, so nothing pointed at the real cause. Both the Add-from-link dialog and Browse Sounds' YouTube search now name the missing file and tell you to check your antivirus quarantine.</li>
+    </ul>
+
     <h2 id="v0.1.241">v0.1.241 — Sound Group badges you can actually tell apart</h2>
     <ul>
       <li><strong>Fixed: the color-per-Sound-Group badge often gave two groups of the same preset the same color.</strong> Each group's badge was tinted by turning its hidden id into a color at random, with nothing stopping two groups in one preset landing on near-identical shades — the "Rain Inside" preset drew three greens, so the feature looked like it had never worked, while the same version on another machine looked correctly varied. Badge colors are now picked knowing about each other: the groups you can see at once always get clearly different colors, and they stay the same between sessions. Badges are also a little stronger against the background.</li>
@@ -123,14 +128,6 @@
     <h2 id="v0.1.228">v0.1.228 — Joining a Sound Group now joins the mix</h2>
     <ul>
       <li><strong>Fixed: a sound added to a Sound Group wasn't automatically added to the mix.</strong> Group membership and mix membership looked linked but weren't, so a group could sit there fully configured with none of its sounds actually playing. Adding a sound to a group (from the Mixer's right-click menu, its "New group…" dialog, or Remix's Group mode member list) now adds it to the mix too. Removing a sound from the mix afterwards still leaves its group membership alone.</li>
-    </ul>
-
-    <h2 id="v0.1.227">v0.1.227 — Stronger panning, Speed bar, and Remix setting fixes</h2>
-    <ul>
-      <li><strong>Panning is more noticeable.</strong> Wide stereo recordings (field recordings of frogs, rain, crowds) barely moved before: a 25% pan made one side only 0.7 dB louder. They now move like they would in a mixing app (about 2 dB at 25%, 5 dB at 50%, 11 dB at 75%). Hard left and right are unchanged. Sounds you have already panned will sound a bit wider, and their saved audio re-renders once.</li>
-      <li><strong>Speed for Random Interval and Scheduled sounds now uses the same three-circle bar</strong> as Pitch, Volume and Pan, with Fully random and Bias options.</li>
-      <li><strong>Fixed: Remix could overwrite a sound's settings for the loaded preset.</strong> After visiting Group or Preset mode, opening a sound in Sound mode showed its shared default settings, and saving replaced the preset's own settings with them.</li>
-      <li><strong>Fixed: just opening some Random Interval or Scheduled sounds in Remix counted as an edit</strong> and auto-saved.</li>
     </ul>
 
     <p><a href="https://github.com/Venari-Hunt/Noctivago/blob/master/CHANGELOG.md">Older releases →</a></p>
