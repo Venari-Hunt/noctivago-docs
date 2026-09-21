@@ -55,9 +55,24 @@
     <p>Click <strong>Import</strong> on any card to add it to your library, exactly like anything else you've imported — it shows up in the Mixer ready to trim, filter, and mix in.</p>
     <ul>
       <li><strong>Freesound imports</strong> download only the compressed preview (not the uploader's original file) — plenty for a looping ambient sound, and near-instant.</li>
-      <li><strong>YouTube imports</strong> download the audio through the same tool Noctívago's "Add from link" feature already uses, capped at 10 minutes so a search result doesn't pull down hours of audio you'll only ever loop a slice of.</li>
+      <li><strong>YouTube imports</strong> download the audio through the same tool Noctívago's "Add from link" feature already uses. They take the first <strong>3 minutes</strong> of the video by default — ambience loops in the app, so a short clip is usually plenty — and you can change that on the plugin's own Settings page.</li>
     </ul>
 
+
+    <h3>How long a YouTube import takes</h3>
+    <p>YouTube deliberately limits how fast a long video downloads — roughly the speed you would play it at. That is YouTube's doing, not the app's, and nothing can speed it up: importing 10 minutes of audio really does take about five minutes. So the card shows a real progress percentage and an estimate of how long is left, and a <strong>Cancel</strong> button stops the download if you change your mind.</p>
+    <p>Only one YouTube import runs at a time. If you click Import on another card while one is running, it will say so rather than quietly doing nothing.</p>
+
+    <h3>Browse Sounds settings</h3>
+    <p>Open <strong>Settings → Browse Sounds</strong> for the plugin's own options:</p>
+    <ul>
+      <li><strong>How much of a YouTube video to import</strong> — from the first minute up to the whole video. The page tells you roughly how long each choice will take.</li>
+      <li><strong>YouTube: sign in as</strong> — YouTube sometimes refuses anonymous downloads. Picking a browser lets an import use that browser's YouTube sign-in (cookies only, never your password, and you must already be signed in there). This is the same setting the app's own "Add from link" uses.</li>
+      <li><strong>Search these sources</strong> — which of Freesound and YouTube start switched on.</li>
+    </ul>
+
+    <h3>When an import fails</h3>
+    <p>The card tells you why in plain words. The usual reasons are a live stream (there is no finished recording to download yet), a video that is private, removed or blocked in your country, or YouTube asking for a sign-in — which the "sign in as" setting above is there to solve.</p>
     <div class="callout">A Freesound import keeps attribution automatically for any license that requires it (most Creative Commons licenses do) — you don't need to track that down yourself later.</div>
 
     <h2>If one source is unavailable</h2>
