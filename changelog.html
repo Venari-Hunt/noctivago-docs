@@ -36,6 +36,11 @@
     <h1>What's new</h1>
     <p class="subtitle">The 15 most recent releases, newest first. The app updates itself; see the <a href="https://github.com/Venari-Hunt/Noctivago/blob/master/CHANGELOG.md">full changelog</a> for every release since the first one.</p>
 
+    <h2 id="v0.1.241">v0.1.241 — Sound Group badges you can actually tell apart</h2>
+    <ul>
+      <li><strong>Fixed: the color-per-Sound-Group badge often gave two groups of the same preset the same color.</strong> Each group's badge was tinted by turning its hidden id into a color at random, with nothing stopping two groups in one preset landing on near-identical shades — the "Rain Inside" preset drew three greens, so the feature looked like it had never worked, while the same version on another machine looked correctly varied. Badge colors are now picked knowing about each other: the groups you can see at once always get clearly different colors, and they stay the same between sessions. Badges are also a little stronger against the background.</li>
+    </ul>
+
     <h2 id="v0.1.240">v0.1.240 — No more false plugin-update alarms</h2>
     <ul>
       <li><strong>Fixed: a plugin could report "Couldn't update automatically" when nothing was actually wrong.</strong> If GitHub was briefly slow or busy, the background update check gave up on the first try and told you about it. It now waits a moment and tries again, and if it still can't get through it simply waits for the next check instead of interrupting you. Installing or checking for updates yourself still tells you straight away if something fails.</li>
@@ -126,11 +131,6 @@
       <li><strong>Speed for Random Interval and Scheduled sounds now uses the same three-circle bar</strong> as Pitch, Volume and Pan, with Fully random and Bias options.</li>
       <li><strong>Fixed: Remix could overwrite a sound's settings for the loaded preset.</strong> After visiting Group or Preset mode, opening a sound in Sound mode showed its shared default settings, and saving replaced the preset's own settings with them.</li>
       <li><strong>Fixed: just opening some Random Interval or Scheduled sounds in Remix counted as an edit</strong> and auto-saved.</li>
-    </ul>
-
-    <h2 id="v0.1.226">v0.1.226 — No more example tabs</h2>
-    <ul>
-      <li>The <strong>Hello</strong> tab is gone. It was a developer example that was never meant to ship, and a second deliberately broken example plugin was removed from the installer along with it.</li>
     </ul>
 
     <p><a href="https://github.com/Venari-Hunt/Noctivago/blob/master/CHANGELOG.md">Older releases →</a></p>
