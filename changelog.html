@@ -36,6 +36,11 @@
     <h1>What's new</h1>
     <p class="subtitle">The 15 most recent releases, newest first. The app updates itself; see the <a href="https://github.com/Venari-Hunt/Noctivago/blob/master/CHANGELOG.md">full changelog</a> for every release since the first one.</p>
 
+    <h2 id="v0.1.240">v0.1.240 — No more false plugin-update alarms</h2>
+    <ul>
+      <li><strong>Fixed: a plugin could report "Couldn't update automatically" when nothing was actually wrong.</strong> If GitHub was briefly slow or busy, the background update check gave up on the first try and told you about it. It now waits a moment and tries again, and if it still can't get through it simply waits for the next check instead of interrupting you. Installing or checking for updates yourself still tells you straight away if something fails.</li>
+    </ul>
+
     <h2 id="v0.1.239">v0.1.239 — YouTube downloads you can watch and stop</h2>
     <ul>
       <li><strong>A YouTube download now shows real progress and how long it has left.</strong> It used to sit on one line saying nothing for minutes, which made it look stuck. YouTube deliberately limits how fast long videos download — roughly the speed you would play them at — so a 10-minute clip really does take about five minutes; now you can see that happening.</li>
@@ -126,12 +131,6 @@
     <h2 id="v0.1.226">v0.1.226 — No more example tabs</h2>
     <ul>
       <li>The <strong>Hello</strong> tab is gone. It was a developer example that was never meant to ship, and a second deliberately broken example plugin was removed from the installer along with it.</li>
-    </ul>
-
-    <h2 id="v0.1.225">v0.1.225 — Pitch drift works on long sounds</h2>
-    <ul>
-      <li><strong>Fixed: pitch drift did nothing audible on loops longer than 10 minutes.</strong> Those sounds play straight from the file, and the drift only made them very slightly faster and slower. The pitch now really drifts, together with the tempo, the same way it already did for shorter sounds.</li>
-      <li>On those long sounds, Speed still changes only the tempo, not the pitch, even while pitch drift is on.</li>
     </ul>
 
     <p><a href="https://github.com/Venari-Hunt/Noctivago/blob/master/CHANGELOG.md">Older releases →</a></p>
