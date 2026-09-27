@@ -36,6 +36,14 @@
     <h1>What's new</h1>
     <p class="subtitle">The 15 most recent releases, newest first. The app updates itself; see the <a href="https://github.com/Venari-Hunt/Noctivago/blob/master/CHANGELOG.md">full changelog</a> for every release since the first one.</p>
 
+    <h2 id="v0.1.243">v0.1.243 — New look: true black with yellow accents</h2>
+    <ul>
+      <li><strong>New: an OLED-friendly black theme with yellow accents.</strong> The background is now true black and everything that's on, selected or primary (Play, In Mix, Solo, toggles, the current tab) is yellow; the old blue is gone.</li>
+      <li><strong>Changed: the top bar has three fixed zones.</strong> Your preset sits on the left, playback controls (Play, volume, Mute, sleep timer) in the middle, and Presets, Settings and Add on the right. In a narrow window the playback controls move to their own full-width row instead of wrapping wherever they fit.</li>
+      <li><strong>Changed: every sound card has the same layout.</strong> Name and a quiet Remove button on top, length and tags below, then In Mix, volume, level meter, Mute and Solo in fixed columns, so the sliders and buttons line up down the whole list.</li>
+      <li><strong>Changed: buttons, text boxes and dropdowns share one size and shape.</strong> Search, sort and grouping now sit together on one row above the list.</li>
+    </ul>
+
     <h2 id="v0.1.242">v0.1.242 — A YouTube import that fails now says what is missing</h2>
     <ul>
       <li><strong>Fixed: if antivirus removes the YouTube downloader from the install, importing a link now says so.</strong> The downloader (yt-dlp.exe) ships inside the installer, but antivirus software quarantines it by mistake fairly often. When that happened, a YouTube link failed with a message about the link not being an audio file, which blamed the link instead of the missing file — and Freesound kept working, so nothing pointed at the real cause. Both the Add-from-link dialog and Browse Sounds' YouTube search now name the missing file and tell you to check your antivirus quarantine.</li>
@@ -123,11 +131,6 @@
     <h2 id="v0.1.229">v0.1.229 — Fixed: resuming a sound could play it with stale settings</h2>
     <ul>
       <li><strong>Fixed: a paused sound could resume with the wrong settings, or silently keep an out-of-date saved clip, instead of what Remix showed.</strong> Pausing a sound (turning it off, switching presets, or Pause All) never actually let go of its player — only specific edits were set up to reach it while paused. Anything else that changed its settings in the meantime had no way back in, so playing it again could sound like an older version, or in some cases not update its audio at all, until something unrelated (like a Sound Group change) forced everything to recheck itself. Every sound now rechecks its own settings the moment it's played, the same way it already double-checks which Sound Group it belongs to.</li>
-    </ul>
-
-    <h2 id="v0.1.228">v0.1.228 — Joining a Sound Group now joins the mix</h2>
-    <ul>
-      <li><strong>Fixed: a sound added to a Sound Group wasn't automatically added to the mix.</strong> Group membership and mix membership looked linked but weren't, so a group could sit there fully configured with none of its sounds actually playing. Adding a sound to a group (from the Mixer's right-click menu, its "New group…" dialog, or Remix's Group mode member list) now adds it to the mix too. Removing a sound from the mix afterwards still leaves its group membership alone.</li>
     </ul>
 
     <p><a href="https://github.com/Venari-Hunt/Noctivago/blob/master/CHANGELOG.md">Older releases →</a></p>
