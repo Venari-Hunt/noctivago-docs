@@ -36,6 +36,12 @@
     <h1>What's new</h1>
     <p class="subtitle">The 15 most recent releases, newest first. The app updates itself; see the <a href="https://github.com/Venari-Hunt/Noctivago/blob/master/CHANGELOG.md">full changelog</a> for every release since the first one.</p>
 
+    <h2 id="v0.1.250">v0.1.250 — Rename, tags and presets from the right-click menu</h2>
+    <ul>
+      <li><strong>Right-click a sound in the Mixer to Rename it or Edit its tags</strong> — opens the same inline editors as double-clicking the name or clicking "+ tag".</li>
+      <li><strong>New "Presets" submenu in the same menu:</strong> every preset is listed with a ✓ next to the ones that already contain the sound. Click one to add the sound to that preset or take it out, without loading it first. The loaded preset's entry works like Play/Stop.</li>
+    </ul>
+
     <h2 id="v0.1.249">v0.1.249 — More in a sound's right-click menu</h2>
     <ul>
       <li><strong>Right-click a sound in the Mixer for more actions:</strong> Play or Stop it, Solo, Mute, Reset volume, Duplicate (same file, separate settings, placed right under the original), Show file in folder, and Remove from library (kept at the very bottom so it's hard to hit by accident).</li>
@@ -113,16 +119,6 @@
     <ul>
       <li><strong>Recordings, links, YouTube downloads, Browse Sounds imports and new Composites now take about a third to half the disk space.</strong> They're saved as lossless FLAC instead of WAV, so they sound exactly the same. Sounds already in your library are left as they are.</li>
       <li><strong>Fixed: deleting a duplicated sound could break the other copy.</strong> A duplicate shares its audio file with the sound it was copied from, and deleting either one deleted that file, so the other copy went missing. The file is now kept until the last sound using it is deleted.</li>
-    </ul>
-
-    <h2 id="v0.1.235">v0.1.235 — Plugins you choose, a new Settings window, and a Clip report</h2>
-    <ul>
-      <li><strong>Remix, Export, Composite, Browse Sounds and Community are now plugins you download.</strong> If you already use them, nothing changes: the app installs them for you on first launch after this update. A fresh install starts with just the Mixer and an "Add the extras" card that installs them in one click.</li>
-      <li><strong>Settings is a new window with a sidebar</strong>, like Obsidian's: General, Library, Community plugins, and a page for each plugin that has options. Every plugin has an on/off switch, so you can turn one off without uninstalling it.</li>
-      <li><strong>Browse plugins</strong> from Settings → Community plugins: search, sort by downloads, name or last update, read each plugin's description, and install, update or remove it. "Check for updates" plus "Update all" keep them current, and each plugin only updates to a version your app can run.</li>
-      <li><strong>Restricted mode</strong> (on by default) blocks plugins from anyone but us. Turn it off in Settings → Community plugins to install third-party plugins.</li>
-      <li><strong>Click a red clip light to see what clipped.</strong> The Clip report shows which sound, Sound Group or the whole mix went over, by how much, and offers a one-click fix (lower that sound, the group, or every sound in the mix by the same amount), with Undo. Clicking the whole-mix meter while it isn't red still clears every light.</li>
-      <li><strong>Fixed: a Fluctuation bar's min/max labels could show up stretched, mirrored or upside-down</strong> in Remix. If you still see this after updating, please tell us.</li>
     </ul>
 
     <p><a href="https://github.com/Venari-Hunt/Noctivago/blob/master/CHANGELOG.md">Older releases →</a></p>
