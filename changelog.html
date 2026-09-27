@@ -36,6 +36,11 @@
     <h1>What's new</h1>
     <p class="subtitle">The 15 most recent releases, newest first. The app updates itself; see the <a href="https://github.com/Venari-Hunt/Noctivago/blob/master/CHANGELOG.md">full changelog</a> for every release since the first one.</p>
 
+    <h2 id="v0.1.247">v0.1.247 — Playing sounds are easy to find when grouped by Sound Group</h2>
+    <ul>
+      <li><strong>With "Group: Sound Group" chosen, sounds in your mix that aren't in any Sound Group now get their own "Playing (ungrouped)" section at the top of the list.</strong> Before, they were mixed in with the rest of your library under "Ungrouped" at the bottom. Sounds you've paused with the main Play/Pause stay in the section too.</li>
+    </ul>
+
     <h2 id="v0.1.246">v0.1.246 — Finer control over how quiet a sound is</h2>
     <ul>
       <li><strong>Changed: the left half of every volume slider (each sound and the master volume) now gives you much more room at the quiet end.</strong> It used to spend most of its travel on the first small drop and squeeze everything quieter into the last few millimetres. Now every bit of travel lowers the volume by the same amount you hear, all the way down to near-silence, and the slider moves in finer steps. The centre is still the sound's own level and the right half still boosts, same as before. Your saved volumes sound exactly as they did; only the slider's position for them moves.</li>
@@ -120,12 +125,6 @@
     <ul>
       <li><strong>Every sound in the Mixer now has a small live level meter, and the whole mix has one next to the Volume slider.</strong> If a sound (or the whole mix) gets loud enough to clip, its meter turns red and stays red until you click it, so you can tell which sound was responsible even if it only clipped for a moment while you weren't looking. Clicking the whole-mix meter clears every red light at once.</li>
       <li><strong>A Sound Group's badge on each of its sounds turns red when the group as a whole clips</strong>, even if none of its sounds clip on their own — for example when a group's own volume or EQ boosts the combined sound too far.</li>
-    </ul>
-
-    <h2 id="v0.1.232">v0.1.232 — Fixed a real crash on very long exports</h2>
-    <ul>
-      <li><strong>Fixed: a very long, dense export (matching real reports around 9 hours) could die outright right after its most expensive step, discarding all the work already done.</strong> A whole-mix or Sound Group reverb pass reads an intermediate file's exact length before running — for a normal export that's a tiny, instant check, but on a long enough export that intermediate can be several gigabytes, and the check was reading the *entire* file into memory just to look at its first few bytes. It now reads only the header it actually needs.</li>
-      <li>Also fixed a related, quieter risk: an export to plain WAV format long enough to cross about 4.3 GB used to write a silently broken file (a corrupted length in its header) instead of failing loudly. Both now use WAV's own extended-size format automatically once a file actually needs it — invisible for every normal-length export.</li>
     </ul>
 
     <p><a href="https://github.com/Venari-Hunt/Noctivago/blob/master/CHANGELOG.md">Older releases →</a></p>
