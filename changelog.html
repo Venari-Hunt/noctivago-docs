@@ -36,6 +36,11 @@
     <h1>What's new</h1>
     <p class="subtitle">The 15 most recent releases, newest first. The app updates itself; see the <a href="https://github.com/Venari-Hunt/Noctivago/blob/master/CHANGELOG.md">full changelog</a> for every release since the first one.</p>
 
+    <h2 id="v0.1.245">v0.1.245 — Top bar rebuilt, same as before</h2>
+    <ul>
+      <li><strong>The top bar (preset name, Play all, volume, mute, sleep timer, Presets, Settings, "+") is rebuilt on React.</strong> Nothing about how it looks or works changes; it is groundwork so the bar can grow without the older code getting in the way.</li>
+    </ul>
+
     <h2 id="v0.1.244">v0.1.244 — Renaming or tagging a sound no longer gets interrupted</h2>
     <ul>
       <li><strong>Fixed: a rename or a tag you are typing on a sound card survives the list refreshing.</strong> The Mixer redraws its list whenever something changes, like a sound starting or stopping, and that used to throw away whatever you were typing mid-edit. The sound cards are rebuilt on React now, so they update in place and keep your edit. Nothing else about the cards changes.</li>
@@ -123,14 +128,6 @@
       <li><strong>Fixed: Browse Sounds keeps loading YouTube results when a page includes live streams.</strong> Live streams are still omitted because they cannot be trimmed or looped, but they no longer make a full YouTube page look like the end of search results.</li>
       <li><strong>Remix's "Loop seam" view can now be zoomed and panned</strong> — scroll to zoom in on the crossfade (or anywhere else in the loop), middle-click drag to pan, double-click empty space to reset. Same interaction as the main trim waveform, and it fetches finer detail for whatever you've zoomed into instead of just stretching the same coarse picture. Dragging the crossfade pins directly still only works at full zoom-out (the "Loop crossfade" slider still works at any zoom).</li>
       <li><strong>Fixed: a Sound Group's shared volume drift didn't keep members in sync.</strong> When a group's Pan drift is set to move the whole group together, each sound's own pan drift correctly switched off so they'd move as one. Volume drift never got the same treatment — a member with its own volume drift kept wandering on its own even while the group was also drifting its volume as a whole, so they could drift apart instead of moving together. Found from a direct question about whether this was expected, not a report.</li>
-    </ul>
-
-    <h2 id="v0.1.230">v0.1.230 — Remix: clearer Random Interval / Scheduled layout</h2>
-    <ul>
-      <li><strong>Each Pitch/Volume/Pan/Speed bar (and the new Gap card) now has its own visible box</strong>, so it's clear which "Fully random" and "Bias" checkboxes belong to which one, and the section names are easier to spot at a glance.</li>
-      <li><strong>Fade in/out moved up next to the waveform</strong> (which already shows the same fade as draggable pins at the trim edges), with a plain "Fade" switch instead of "0 = off" being the only way to turn it off.</li>
-      <li><strong>Sync group moved up next to the sound's own name</strong>, since it names the sound rather than randomizing it.</li>
-      <li><strong>Fixed: switching Playback mode (Loop / Random Interval / Scheduled) without reloading the sound could leave the Fluctuation section stuck showing or stuck hidden.</strong> Found while making the changes above, not reported.</li>
     </ul>
 
     <p><a href="https://github.com/Venari-Hunt/Noctivago/blob/master/CHANGELOG.md">Older releases →</a></p>
