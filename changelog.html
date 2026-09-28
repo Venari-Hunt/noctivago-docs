@@ -36,6 +36,11 @@
     <h1>What's new</h1>
     <p class="subtitle">The 15 most recent releases, newest first. The app updates itself; see the <a href="https://github.com/Venari-Hunt/Noctivago/blob/master/CHANGELOG.md">full changelog</a> for every release since the first one.</p>
 
+    <h2 id="v0.1.254">v0.1.254 — Pinned taskbar icon stays visible after updates</h2>
+    <ul>
+      <li><strong>Updating no longer leaves a pinned taskbar icon blank.</strong> The installer now tells Windows to refresh its icons, so a pinned Noctívago shows the current icon right away (this bit some people after the v0.1.251 icon change).</li>
+    </ul>
+
     <h2 id="v0.1.253">v0.1.253 — See what a community upload is doing</h2>
     <ul>
       <li><strong>Sharing a preset to the community now shows a progress bar</strong> that runs through compressing each sound and uploading, instead of only a line of text.</li>
@@ -110,14 +115,6 @@
     <h2 id="v0.1.240">v0.1.240 — No more false plugin-update alarms</h2>
     <ul>
       <li><strong>Fixed: a plugin could report "Couldn't update automatically" when nothing was actually wrong.</strong> If GitHub was briefly slow or busy, the background update check gave up on the first try and told you about it. It now waits a moment and tries again, and if it still can't get through it simply waits for the next check instead of interrupting you. Installing or checking for updates yourself still tells you straight away if something fails.</li>
-    </ul>
-
-    <h2 id="v0.1.239">v0.1.239 — YouTube downloads you can watch and stop</h2>
-    <ul>
-      <li><strong>A YouTube download now shows real progress and how long it has left.</strong> It used to sit on one line saying nothing for minutes, which made it look stuck. YouTube deliberately limits how fast long videos download — roughly the speed you would play them at — so a 10-minute clip really does take about five minutes; now you can see that happening.</li>
-      <li><strong>Cancel actually cancels.</strong> Closing the Add-from-link dialog, or pressing Cancel on a Browse Sounds card, stops the download instead of leaving it running out of sight.</li>
-      <li><strong>Failed downloads say why.</strong> A live stream, a removed or private video and a sign-in wall used to come out as the same unhelpful message. Each now explains itself in plain words.</li>
-      <li><strong>Browse Sounds has its own Settings page</strong> (update it to 1.1.0 from Settings → Community plugins), including how much of a video to import — 3 minutes by default instead of 10, so an import finishes in about a minute and a half.</li>
     </ul>
 
     <p><a href="https://github.com/Venari-Hunt/Noctivago/blob/master/CHANGELOG.md">Older releases →</a></p>
