@@ -36,6 +36,27 @@
     <h1>What's new</h1>
     <p class="subtitle">The 15 most recent releases, newest first. The app updates itself; see the <a href="https://github.com/Venari-Hunt/Noctivago/blob/master/CHANGELOG.md">full changelog</a> for every release since the first one.</p>
 
+    <h2 id="v0.1.264">v0.1.264 — Faster exports with pitched sounds</h2>
+    <ul>
+      <li><strong>Exports with Random Interval or Scheduled sounds that change pitch each play are much faster.</strong> Each pitch is now prepared once and reused, instead of once for every single play. On a 1-hour beach mix the whole export went from 71 seconds to 43; long exports gain much more. Pitches can differ from before by a tiny, inaudible amount.</li>
+      <li><strong>Long Opus exports no longer slow down near the end.</strong> The last part of a 9-hour export used to re-read hours of each looping sound before mixing it. The result is identical.</li>
+    </ul>
+
+    <h2 id="v0.1.263">v0.1.263 — Faster Opus exports</h2>
+    <ul>
+      <li><strong>With "Faster export" on, saving to Opus mixes and compresses several stretches of the export at once</strong> instead of one long pass. On a 1-hour beach mix the last step went from 43 seconds to about 20; longer exports gain more. The result sounds the same.</li>
+    </ul>
+
+    <h2 id="v0.1.260">v0.1.260 — Faster long exports</h2>
+    <ul>
+      <li><strong>Long exports are faster again.</strong> Sounds that play now and then are combined with much less wasted work, and saving to MP3, Opus, FLAC or Ogg now happens while the mix is still being made instead of after it. A 9-hour beach mix went from about 19 minutes to under 16 (a 1-hour version: 2:22 to 1:33). The result sounds the same.</li>
+    </ul>
+
+    <h2 id="v0.1.259">v0.1.259 — A title bar that matches the app</h2>
+    <ul>
+      <li><strong>The window has its own dark title bar now</strong> instead of the plain Windows one: the app icon and name on the left, and minimize, maximize and close in matching colors on the right. Dragging, double-click to maximize and Windows snap layouts work as before.</li>
+    </ul>
+
     <h2 id="v0.1.258">v0.1.258 — Faster exports for sounds that play rarely</h2>
     <ul>
       <li><strong>Exports are much faster when a Random Interval or Scheduled sound plays only now and then.</strong> A sound playing every few minutes across a long export used to be prepared as one piece as long as the whole export, which could take many minutes on its own. On a test 9-hour beach mix, the whole export went from 13.5 minutes to just over 2. The result sounds the same.</li>
@@ -92,26 +113,6 @@
     <h2 id="v0.1.248">v0.1.248 — Edit in Remix from the Mixer</h2>
     <ul>
       <li><strong>Right-click a sound in the Mixer and choose "Edit in Remix"</strong> to jump straight to the Remix tab with that sound open. If you have unsaved changes on another sound in Remix, you get the usual prompt first. Needs the Remix plugin (1.2.0 or newer, which updates itself).</li>
-    </ul>
-
-    <h2 id="v0.1.247">v0.1.247 — Playing sounds are easy to find when grouped by Sound Group</h2>
-    <ul>
-      <li><strong>With "Group: Sound Group" chosen, sounds in your mix that aren't in any Sound Group now get their own "Playing (ungrouped)" section at the top of the list.</strong> Before, they were mixed in with the rest of your library under "Ungrouped" at the bottom. Sounds you've paused with the main Play/Pause stay in the section too.</li>
-    </ul>
-
-    <h2 id="v0.1.246">v0.1.246 — Finer control over how quiet a sound is</h2>
-    <ul>
-      <li><strong>Changed: the left half of every volume slider (each sound and the master volume) now gives you much more room at the quiet end.</strong> It used to spend most of its travel on the first small drop and squeeze everything quieter into the last few millimetres. Now every bit of travel lowers the volume by the same amount you hear, all the way down to near-silence, and the slider moves in finer steps. The centre is still the sound's own level and the right half still boosts, same as before. Your saved volumes sound exactly as they did; only the slider's position for them moves.</li>
-    </ul>
-
-    <h2 id="v0.1.245">v0.1.245 — Top bar rebuilt, same as before</h2>
-    <ul>
-      <li><strong>The top bar (preset name, Play all, volume, mute, sleep timer, Presets, Settings, "+") is rebuilt on React.</strong> Nothing about how it looks or works changes; it is groundwork so the bar can grow without the older code getting in the way.</li>
-    </ul>
-
-    <h2 id="v0.1.244">v0.1.244 — Renaming or tagging a sound no longer gets interrupted</h2>
-    <ul>
-      <li><strong>Fixed: a rename or a tag you are typing on a sound card survives the list refreshing.</strong> The Mixer redraws its list whenever something changes, like a sound starting or stopping, and that used to throw away whatever you were typing mid-edit. The sound cards are rebuilt on React now, so they update in place and keep your edit. Nothing else about the cards changes.</li>
     </ul>
 
     <p><a href="https://github.com/Venari-Hunt/Noctivago/blob/master/CHANGELOG.md">Older releases →</a></p>
