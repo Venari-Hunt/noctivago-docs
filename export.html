@@ -41,6 +41,7 @@
     <p>The Export tab simulates how a preset would actually play over a chosen length — including Random Interval and Scheduled sounds firing at realistic moments, Sound Group and whole-mix processing, and Fluctuation drift — then renders the whole thing down to one file. It's the same engine that plays your mix live, run once and captured to a file instead of listened to in real time.</p>
 
     <h2>Basic settings</h2>
+    <p>First pick the export type at the top: <strong>Audio or video file</strong> or <strong>For phone</strong>. The tab remembers your type, length, format and fades for the next export, and the preset starts on the one loaded in the Mixer.</p>
     <ul>
       <li><strong>Preset</strong> and <strong>Length</strong> — which mix, and how long the exported file should be.</li>
       <li><strong>Format</strong> — including lossless WAV and space-saving compressed formats (Opus needs a specific sample rate internally, which Noctívago handles for you).</li>
@@ -48,7 +49,7 @@
     </ul>
 
     <h2>For phone</h2>
-    <p>The <strong>For phone (Noctívago mobile)</strong> format saves a preset file for the upcoming Noctívago phone app instead of a fixed-length mix. Every sound's Remix settings and all reverb (the sound's own, its Sound Group's and the whole mix's) are baked in, so the phone only has to mix and the battery lasts. Length, fades and video don't apply. A loop longer than 10 minutes ships as its middle 15 seconds, and the result warns you if the preset may need too much memory for a phone. Needs Noctívago 0.1.268 and Export 1.1.0.</p>
+    <p><strong>For phone</strong> saves a preset file for the upcoming Noctívago phone app instead of a fixed-length mix. Every sound's Remix settings and all reverb (the sound's own, its Sound Group's and the whole mix's) are baked in, so the phone only has to mix and the battery lasts. Only the preset picker shows; length, format, fades, video and the info file are for file exports. A loop longer than 10 minutes ships as its middle 15 seconds, and the result warns you if the preset may need too much memory for a phone. Needs Noctívago 0.1.268 and Export 1.1.0 (the type picker: Export 1.2.0).</p>
 
     <h2>Video output, for platforms that need one</h2>
     <p>Choose Audio only, Video only, or Both. When a video is produced, pick its background:</p>
