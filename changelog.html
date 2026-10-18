@@ -36,6 +36,11 @@
     <h1>What's new</h1>
     <p class="subtitle">The 15 most recent releases, newest first. The app updates itself; see the <a href="https://github.com/Venari-Hunt/Noctivago/blob/master/CHANGELOG.md">full changelog</a> for every release since the first one.</p>
 
+    <h2 id="v0.1.269">v0.1.269 — Phone presets with special characters in file names</h2>
+    <ul>
+      <li><strong>Fix: a phone preset failed to import on the phone ("missing the audio for…") when a sound's file name had an accent or a special character</strong> (é, ç, ã, a wide "｜" bar). Every preset file now marks its file names as UTF-8, so the phone, Windows Explorer and 7-Zip read them the same way Noctívago does. Export the preset For phone again to get a fixed file; the phone app 0.4.1 also opens the files exported before this fix.</li>
+    </ul>
+
     <h2 id="v0.1.268">v0.1.268 — Export for phone</h2>
     <ul>
       <li><strong>Getting ready for the Noctívago phone app: Export can now save a preset "For phone".</strong> Pick it in the Export tab's Format list (needs Export plugin 1.1.0). It writes a preset file with every sound's Remix settings and all reverb already baked in, so the phone only has to mix. On the Beach preset: 18 sounds in 27 seconds, a 7 MB file. A loop longer than 10 minutes ships as its middle 15 seconds, and the result warns you when a preset may need too much memory for a phone.</li>
@@ -107,11 +112,6 @@
       <li><strong>Sharing a preset to the community now shows a progress bar</strong> that runs through compressing each sound and uploading, instead of only a line of text.</li>
       <li><strong>You see each sound's size before and after compression</strong>, so you know what the upload weighs.</li>
       <li><strong>When a preset is too large to share, the message names the heaviest sounds</strong> and highlights them in the list, so you know which ones to shorten or remove.</li>
-    </ul>
-
-    <h2 id="v0.1.252">v0.1.252 — Icons in the right-click menu</h2>
-    <ul>
-      <li><strong>Every option in a sound's right-click menu now has an icon</strong> (play, solo, mute, rename, tags, folder, trash and so on), so you can spot the one you want at a glance. Presets and Sound Groups that already hold the sound show a check mark.</li>
     </ul>
 
     <p><a href="https://github.com/Venari-Hunt/Noctivago/blob/master/CHANGELOG.md">Older releases →</a></p>
