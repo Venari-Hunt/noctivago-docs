@@ -36,6 +36,30 @@
     <h1>What's new</h1>
     <p class="subtitle">The 15 most recent releases, newest first. The app updates itself; see the <a href="https://github.com/Venari-Hunt/Noctivago/blob/master/CHANGELOG.md">full changelog</a> for every release since the first one.</p>
 
+    <h2 id="v0.1.273">v0.1.273 — Compress sounds already in your library</h2>
+    <ul>
+      <li><strong>New: Settings → Library → Compress library sounds.</strong> WAV sounds stored in your library become FLAC: the same sound, about half the space. Each file is checked to decode to exactly the same audio before it is kept; the few that can't be stored exactly stay WAV. The change finishes when Noctívago next starts, so nothing you are playing is interrupted. Sounds you play from their own folder are never touched.</li>
+    </ul>
+
+    <h2 id="v0.1.272">v0.1.272 — Sleep timer stays off after an update</h2>
+    <ul>
+      <li><strong>Fix: after an update restarted the app, the sleep timer's "Start this timer every time Noctívago opens" notice came back and started the timer, even if you had clicked "Don't start".</strong> An update restart now continues your session: a timer you skipped stays off, a running one keeps running, and the notice only returns if it was still counting down when the update started. Opening the app yourself works as before.</li>
+    </ul>
+
+    <h2 id="v0.1.271">v0.1.271 — Bigger community presets</h2>
+    <ul>
+      <li><strong>A community preset can now be up to 80 MB</strong> (was 50 MB), so presets with long sounds need "Cut to 15 s" less often.</li>
+      <li><strong>Community storage no longer fills up and stops uploads</strong>: when it gets full, the oldest presets are removed to make room for new ones.</li>
+      <li>The phone app can now download only its own copy of a community preset (Beach: about 7 MB instead of 46 MB).</li>
+    </ul>
+
+    <h2 id="v0.1.270">v0.1.270 — Community presets play on the phone</h2>
+    <ul>
+      <li><strong>Sharing a preset to Community now also packs a phone copy</strong>: the same sounds baked the way "Export for phone" does (every Remix effect, Sound Group and whole-mix reverb applied). The phone app's Community tab plays that copy, so it sounds exactly like the PC. Presets shared before this version don't have it yet: share them again to update them.</li>
+      <li>Sharing takes a little longer (each sound is baked once more), and the upload grows by roughly a sixth (Beach: about 7 MB on top of 41 MB). The 50 MB limit counts both.</li>
+      <li>Older versions of Noctívago still download these presets as before; they ignore the phone copy.</li>
+    </ul>
+
     <h2 id="v0.1.269">v0.1.269 — Phone presets with special characters in file names</h2>
     <ul>
       <li><strong>Fix: a phone preset failed to import on the phone ("missing the audio for…") when a sound's file name had an accent or a special character</strong> (é, ç, ã, a wide "｜" bar). Every preset file now marks its file names as UTF-8, so the phone, Windows Explorer and 7-Zip read them the same way Noctívago does. Export the preset For phone again to get a fixed file; the phone app 0.4.1 also opens the files exported before this fix.</li>
@@ -90,28 +114,6 @@
     <h2 id="v0.1.257">v0.1.257 — Much faster YouTube imports</h2>
     <ul>
       <li><strong>Adding a sound from YouTube is now dozens of times faster.</strong> Ten minutes of an 8-hour rain video used to take about 5 minutes to download; now it takes around 10 to 15 seconds. Works in Add from link and Browse Sounds. If the fast way doesn't work for a link, the app quietly uses the old one.</li>
-    </ul>
-
-    <h2 id="v0.1.256">v0.1.256 — Faster community uploads</h2>
-    <ul>
-      <li><strong>Sharing a preset to the community compresses several sounds at once</strong>, so the compressing step is about 3 times faster on a preset with many big sounds (12 large files went from about 7 minutes to 2).</li>
-    </ul>
-
-    <h2 id="v0.1.255">v0.1.255 — Cut long sounds when a shared preset is too large</h2>
-    <ul>
-      <li><strong>When a preset is too large to share, each long sound in the size list gets a "Cut to 15 s" button.</strong> Click it and the upload keeps only 15 seconds from the middle of the part the preset plays; the list shows the new size right away. Your own copy of the sound is not changed. Needs Community plugin 1.2.0.</li>
-    </ul>
-
-    <h2 id="v0.1.254">v0.1.254 — Pinned taskbar icon stays visible after updates</h2>
-    <ul>
-      <li><strong>Updating no longer leaves a pinned taskbar icon blank.</strong> The installer now tells Windows to refresh its icons, so a pinned Noctívago shows the current icon right away (this bit some people after the v0.1.251 icon change).</li>
-    </ul>
-
-    <h2 id="v0.1.253">v0.1.253 — See what a community upload is doing</h2>
-    <ul>
-      <li><strong>Sharing a preset to the community now shows a progress bar</strong> that runs through compressing each sound and uploading, instead of only a line of text.</li>
-      <li><strong>You see each sound's size before and after compression</strong>, so you know what the upload weighs.</li>
-      <li><strong>When a preset is too large to share, the message names the heaviest sounds</strong> and highlights them in the list, so you know which ones to shorten or remove.</li>
     </ul>
 
     <p><a href="https://github.com/Venari-Hunt/Noctivago/blob/master/CHANGELOG.md">Older releases →</a></p>
