@@ -72,13 +72,21 @@
     <p>Quiets a sound whenever it drops below a threshold you set — useful for cutting a hissy or rumbly noise floor in the gaps between events on a self-recorded or otherwise noisy clip. Threshold, Reduction, Attack, and Release controls; off by default.</p>
 
     <h3 id="noise-reduction">Noise reduction</h3>
-    <p>For a steady background noise — tape hiss, mains hum, an air conditioner — that's present even under the sound you actually want (the noise gate only handles the quiet gaps, this handles noise that's there constantly). Mark a stretch of the trimmed loop that's noise-only via "Noise from"/"Noise to" (or the one-click "Noise sample from loop start" button), set a strength, and save — Noctívago measures that stretch and subtracts its noise profile from the whole clip.</p>
-    <div class="callout">There's no live preview for noise reduction (there's no real-time way to do this kind of processing) — flip the preview toggle to "Saved audio" after saving to hear the result.</div>
+    <div class="nightly-flag"><span class="nightly-pill">Nightly</span><span>Nightly only: the Repair tab, the Noise sample band, and live preview arrive in the stable app with 2.0.</span></div>
+    <p>For a steady background noise — tape hiss, mains hum, an air conditioner — that's present even under the sound you actually want (the noise gate only handles the quiet gaps, this handles noise that's there constantly). It lives in the <strong>Repair</strong> tab, in its own Noise reduction card. Mark a stretch of the trimmed loop that's noise only: drag the <strong>Noise sample</strong> band across the spectrogram, type the times in "Sample from" and "to", or press <strong>Use loop start</strong> for the first ~1.5 seconds. The band's handles resize it, and dragging it moves the sample to a new spot. A curve shows the noise profile Noctívago learned, and it redraws when you move the sample. Strength controls how much is removed; past 24 dB the sound can turn watery.</p>
+    <p><strong>Live preview (Nightly only):</strong> the preview applies noise reduction as you change the sample and strength, and Save bakes the same result. Half a second of noise or more gives the best profile.</p>
+    <div class="nightly-flag"><span class="nightly-pill">Nightly</span><span>Live preview arrives with 2.0. In the stable app there is no live preview for noise reduction yet: flip the toggle to "Saved audio" after saving to hear it.</span></div>
 
     <h3 id="spectral-repair">Spectral repair</h3>
-    <p>For a short sound hiding inside another one: a cough in the rain, a bird over the wind, a phone buzz. The Spectral repair panel under the EQ shows your trim as a spectrogram, with time across and pitch going up, so the unwanted sound shows up as a bright spot. Drag a box around it and just that box gets turned down (40 dB by default; change it with <strong>Reduce by</strong>). Everything outside the box, including the same pitches a moment earlier or later, stays as it was.</p>
-    <p>Drag a box to move it, drag its edge to resize it, and right-click it (or select it and press Delete) to remove it. <strong>Clear all</strong> removes every box. Needs Noctívago 0.1.237 and Remix 1.1.0 or newer.</p>
-    <div class="callout">Like noise reduction, spectral repair is applied when you Save. Flip the preview toggle to "Saved audio" to hear the result.</div>
+    <div class="nightly-flag"><span class="nightly-pill">Nightly</span><span>Nightly only: the Repair tab, the drawing tools, and live preview arrive in the stable app with 2.0.</span></div>
+    <p>For a short sound hiding inside another one: a cough in the rain, a bird over the wind, a phone buzz. The <strong>Repair</strong> tab shows your trim as a spectrogram, with time across and pitch going up, so the unwanted sound shows up as a bright spot. Paint or draw over it and just that area gets turned down (40 dB by default; change it with <strong>Reduce by</strong>). Everything outside the shape, including the same pitches a moment earlier or later, stays as it was.</p>
+    <ul>
+      <li><strong>Brush</strong> (B) paints over the sound; a stroke merges into any shape it touches. <strong>Box</strong> (R) and <strong>Lasso</strong> (L) draw a rectangle or a loop. Hold Shift to join a new shape into the picked one, or Alt to cut a region out of it.</li>
+      <li><strong>Select</strong> (V) drags a shape or its handles; double-click its outline to add a handle; Delete removes the picked shape. Ctrl+Z and Ctrl+Y undo and redo.</li>
+    </ul>
+    <p>Needs Noctívago 0.1.237 and Remix 1.1.0 or newer.</p>
+    <div class="callout"><strong>Live preview (Nightly only):</strong> the preview hears each shape as you draw it, and Save bakes the same result.</div>
+    <div class="nightly-flag"><span class="nightly-pill">Nightly</span><span>Live preview arrives with 2.0. In the stable app spectral repair has no live preview yet: flip the toggle to "Saved audio" after saving to hear it.</span></div>
 
     <h2>Doppler (pass-by effect)</h2>
     <p>Simulates a sound passing by: pitch rises approaching a "closest point" you can drag on the waveform, then falls away after it, with a Sharpness control for how gradual vs. sudden the effect feels.</p>
@@ -106,7 +114,8 @@
     <p>Ctrl+Z / Ctrl+Shift+Z undo and redo your edits; a Cancel button discards everything since you opened the sound; leaving with unsaved changes prompts you first (with a "don't ask again" option). An A/B compare lets you snapshot the current EQ into a slot and flip back and forth while tuning.</p>
 
     <h2>Live edit vs. Saved audio</h2>
-    <p>Most controls preview live as you drag. A few (Doppler, Reverse, Noise reduction, Spectral repair, and Pitch beyond a rough approximation) can't be previewed in real time. A toggle next to Play switches between <strong>Live edit</strong> and <strong>Saved audio</strong>, the actual file the Mixer plays. If nothing is saved yet, switching to Saved audio saves first. Saved audio loops gaplessly, exactly as it will in your mix, and you can keep saving while you listen to it.</p>
+    <p>Most controls preview live as you drag. A few (Doppler, Reverse, and Pitch beyond a rough approximation) can't be previewed exactly in real time, and in the stable app neither can Noise reduction or Spectral repair; Nightly previews both live. A toggle next to Play switches between <strong>Live edit</strong> and <strong>Saved audio</strong>, the actual file the Mixer plays. If nothing is saved yet, switching to Saved audio saves first. Saved audio loops gaplessly, exactly as it will in your mix, and you can keep saving while you listen to it.</p>
+    <div class="nightly-flag"><span class="nightly-pill">Nightly</span><span>Nightly only: live preview of Noise reduction and Spectral repair arrives in the stable app with 2.0.</span></div>
 
     <h2>What comes next</h2>
     <div class="feature-grid">
